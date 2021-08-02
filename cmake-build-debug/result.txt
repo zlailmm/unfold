@@ -1,0 +1,924 @@
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/test-2.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/test-2.i
+formula:1
+
+
+current file: ../test/test-2.i
+formula:1
+
+
+current file: ../test/test-2.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 20.304
+model_check: 275.790
+total time: 296.094
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 4.504
+model_check: 34.336
+total time: 59.144
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 20.304
+& 275.790
+& 296.094
+& \emph{true}
+& 34
+& 19
+& 36
+& 4.504
+& 34.336
+& 59.144\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 13.888
+model_check: 302.164
+total time: 316.052
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 3.797
+model_check: 38.833
+total time: 56.518
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 13.888
+& 302.164
+& 316.052
+& \emph{true}
+& 34
+& 19
+& 36
+& 3.797
+& 38.833
+& 56.518\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 15.840
+model_check: 1410.574
+total time: 1426.414
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 2.304
+model_check: 35.357
+total time: 53.501
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 15.840
+& 1410.574
+& 1426.414
+& \emph{true}
+& 34
+& 19
+& 36
+& 2.304
+& 35.357
+& 53.501\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 18.941
+model_check: 1518.674
+total time: 1537.615
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 3.067
+model_check: 36.415
+total time: 58.423
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 18.941
+& 1518.674
+& 1537.615
+& \emph{true}
+& 34
+& 19
+& 36
+& 3.067
+& 36.415
+& 58.423\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 12.995
+model_check: 1534.873
+total time: 1547.868
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 3.255
+model_check: 32.920
+total time: 49.170
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 12.995
+& 1534.873
+& 1547.868
+& \emph{true}
+& 34
+& 19
+& 36
+& 3.255
+& 32.920
+& 49.170\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 22.923
+model_check: 2080.602
+total time: 2103.525
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 3.989
+model_check: 49.670
+total time: 76.582
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 22.923
+& 2080.602
+& 2103.525
+& \emph{true}
+& 34
+& 19
+& 36
+& 3.989
+& 49.670
+& 76.582\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 24.267
+model_check: 1954.924
+total time: 1979.191
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 4.939
+model_check: 52.803
+total time: 82.009
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 24.267
+& 1954.924
+& 1979.191
+& \emph{true}
+& 34
+& 19
+& 36
+& 4.939
+& 52.803
+& 82.009\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 21.267
+model_check: 1918.744
+total time: 1940.011
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 3.330
+model_check: 50.970
+total time: 75.567
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 21.267
+& 1918.744
+& 1940.011
+& \emph{true}
+& 34
+& 19
+& 36
+& 3.330
+& 50.970
+& 75.567\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 20.083
+model_check: 1880.902
+total time: 1900.985
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 6.782
+model_check: 45.766
+total time: 72.631
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 20.083
+& 1880.902
+& 1900.985
+& \emph{true}
+& 34
+& 19
+& 36
+& 6.782
+& 45.766
+& 72.631\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 32.658
+model_check: 1919.587
+total time: 1952.245
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 4.359
+model_check: 47.452
+total time: 84.469
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 32.658
+& 1919.587
+& 1952.245
+& \emph{true}
+& 34
+& 19
+& 36
+& 4.359
+& 47.452
+& 84.469\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 18.340
+model_check: 1599.026
+total time: 1617.366
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 4.787
+model_check: 39.624
+total time: 62.751
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 18.340
+& 1599.026
+& 1617.366
+& \emph{true}
+& 34
+& 19
+& 36
+& 4.787
+& 39.624
+& 62.751\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 19.886
+model_check: 1839.117
+total time: 1859.003
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 3.519
+model_check: 43.464
+total time: 66.869
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 19.886
+& 1839.117
+& 1859.003
+& \emph{true}
+& 34
+& 19
+& 36
+& 3.519
+& 43.464
+& 66.869\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 20.732
+model_check: 1920.110
+total time: 1940.842
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 3.983
+model_check: 49.206
+total time: 73.921
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 20.732
+& 1920.110
+& 1940.842
+& \emph{true}
+& 34
+& 19
+& 36
+& 3.983
+& 49.206
+& 73.921\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 17.512
+model_check: 1833.549
+total time: 1851.061
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 4.567
+model_check: 45.614
+total time: 67.693
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 17.512
+& 1833.549
+& 1851.061
+& \emph{true}
+& 34
+& 19
+& 36
+& 4.567
+& 45.614
+& 67.693\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 18.855
+model_check: 1601.156
+total time: 1620.011
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 2.397
+model_check: 40.325
+total time: 61.577
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 18.855
+& 1601.156
+& 1620.011
+& \emph{true}
+& 34
+& 19
+& 36
+& 2.397
+& 40.325
+& 61.577\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 14.125
+model_check: 1444.572
+total time: 1458.697
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 2.431
+model_check: 35.337
+total time: 51.893
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 14.125
+& 1444.572
+& 1458.697
+& \emph{true}
+& 34
+& 19
+& 36
+& 2.431
+& 35.337
+& 51.893\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 12.605
+model_check: 1543.547
+total time: 1556.152
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 3.706
+model_check: 43.371
+total time: 59.682
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 12.605
+& 1543.547
+& 1556.152
+& \emph{true}
+& 34
+& 19
+& 36
+& 3.706
+& 43.371
+& 59.682\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 14.130
+model_check: 1448.635
+total time: 1462.765
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 2.840
+model_check: 34.051
+total time: 51.021
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 14.130
+& 1448.635
+& 1462.765
+& \emph{true}
+& 34
+& 19
+& 36
+& 2.840
+& 34.051
+& 51.021\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 13.003
+model_check: 1735.010
+total time: 1748.013
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 2.943
+model_check: 50.565
+total time: 66.511
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 13.003
+& 1735.010
+& 1748.013
+& \emph{true}
+& 34
+& 19
+& 36
+& 2.943
+& 50.565
+& 66.511\\ \cline{2-12}
+
+
+current file: ../test/threads.i
+formula:1
+
+direct build time: 15.635
+model_check: 1423.189
+total time: 1438.824
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 4.006
+model_check: 39.362
+total time: 59.003
+
+& \emph{true}
+& 52
+& 25
+& 69
+& 15.635
+& 1423.189
+& 1438.824
+& \emph{true}
+& 34
+& 19
+& 36
+& 4.006
+& 39.362
+& 59.003\\ \cline{2-12}
+
