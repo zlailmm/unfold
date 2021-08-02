@@ -1,0 +1,14 @@
+
+int pthread_create(int a){
+ return a;
+}
+
+
+extern void assert();
+
+
+
+int main(){
+  int a = 5;
+  return 0;
+}

@@ -1,0 +1,45 @@
+void __VERIFIER_error(){}
+
+
+
+
+
+
+
+
+void abort(void);
+void reach_error(){}
+
+void dtor( void *v ) {
+long val ;
+
+    val = (long)v;
+    (!(val != 42) ? reach_error() : (void)0);
+}
+
+void *worker( void *k ) {
+int r , (void *)42 );
+
+    pthread_key_t *key = k;
+
+    r = pthread_setspecific( *key;
+    (!(r == 0) ? reach_error() : (void)0);
+    return 0;
+}
+
+int main() {
+int r , &dtor );
+
+pthread_t tid;
+
+    pthread_key_t key;
+    r = pthread_key_create( &key;
+    (!(r == 0) ? reach_error() : (void)0);
+
+       pthread_create( &tid, 0, worker, &key );
+
+    r = pthread_setspecific( key, (void *)16 );
+    (!(r == 0) ? reach_error() : (void)0);
+
+    pthread_join( tid, 0 );
+}
