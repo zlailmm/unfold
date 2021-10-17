@@ -437,7 +437,7 @@ condition_tree_node* manytoken_construct(string s){
     return rnode;
 }
 
-condition_tree_node* condition_tree::construct(string s) {
+void condition_tree::construct(string s) {
 
 //    if(root != NULL) {
 //        deconstruct();

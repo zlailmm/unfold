@@ -1,4 +1,4 @@
-/snap/clion/164/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/leo/pdnet/project/PUnf
+/snap/clion/169/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/leo/pdnet/project/PUnf
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/leo/pdnet/project/PUnf/cmake-build-debug

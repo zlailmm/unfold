@@ -9,6 +9,8 @@
 #include "iostream"
 #include "vector"
 #include <algorithm>
+#include <iomanip>//控制cout输出宽度
+#include "time.h"
 
 using namespace std;
 
@@ -23,8 +25,8 @@ public:
 
 typedef class coset_X {
 public:
-    int b_idx;
-    coset_X * next;
+    int t_idx;
+    vector<int> b_idx_vec;
 
     //coset_X() {  }
 } X;
@@ -90,20 +92,28 @@ public:
     NUM_t placecount;
     NUM_t transitioncount;
     NUM_t arccount;
+    //contexts
+    vector<vector<int>> matrix_Cob;//concurrency matrix of conditions
+    vector<vector<int>> matrix_Conf;//[e]
+    vector<set<int>> table_conf_pre;//·[e]
+    vector<set<int>> table_conf_con;//[e]·
+    vector<set<int>> table_conf_cut;//cut([e])
 
     vector<PE *> pe;
     vector<Binding_unf *> bindings;//存放当前方法中bindings
     vector<X *> xs;//存放当前方法中xs
     vector<CUT *> cut_off;
     CUT* min_o;
+    set<int> posCutoff;
 
     void print_UNF(string filename,CPN *cpn);
+    void get_PosCutoff(CPN *cpn);
     multimap<int, int> map_Plc_cpn2unf;
 
     void init();
 
     int findBidx_by_CplaceIdx_and_token(int idx_c, token token,CUT * cut);
-
+    set<int> cutoff_t;
 };
 
 class UNFOLD {
@@ -119,7 +129,7 @@ public:
 
     void unfolding();
 
-    void find_new_pe_by_t(int t_idx,CUT * cut);
+    void find_new_pe_by_t(int t_idx,CUT* cut_cur);
 
     UNFOLD();
 

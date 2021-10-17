@@ -1850,3 +1850,1743 @@ formula:1
 current file: ../test/bigshot_p.i
 formula:1
 
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+direct build time: 16.771
+model_check: 134.895
+total time: 151.666
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 5.481
+model_check: 27.750
+total time: 50.002
+
+& \emph{false}
+& 64
+& 32
+& 23
+& 16.771
+& 134.895
+& 151.666
+& \emph{false}
+& 40
+& 22
+& 20
+& 5.481
+& 27.750
+& 50.002\\ \cline{2-12}
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+direct build time: 25.162
+model_check: 132.367
+total time: 157.529
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 7.463
+model_check: 32.836
+total time: 65.461
+
+& \emph{false}
+& 64
+& 32
+& 23
+& 25.162
+& 132.367
+& 157.529
+& \emph{false}
+& 40
+& 22
+& 20
+& 7.463
+& 32.836
+& 65.461\\ \cline{2-12}
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+direct build time: 28.515
+model_check: 69.477
+total time: 97.992
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 7.208
+model_check: 32.608
+total time: 68.331
+
+& \emph{false}
+& 64
+& 32
+& 23
+& 28.515
+& 69.477
+& 97.992
+& \emph{false}
+& 40
+& 22
+& 20
+& 7.208
+& 32.608
+& 68.331\\ \cline{2-12}
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+direct build time: 25.550
+model_check: 61.062
+total time: 86.612
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 7.517
+model_check: 27.300
+total time: 60.367
+
+& \emph{false}
+& 64
+& 32
+& 23
+& 25.550
+& 61.062
+& 86.612
+& \emph{false}
+& 40
+& 22
+& 20
+& 7.517
+& 27.300
+& 60.367\\ \cline{2-12}
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+direct build time: 15.204
+model_check: 33.903
+total time: 49.107
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 4.500
+model_check: 25.081
+total time: 44.785
+
+& \emph{false}
+& 64
+& 32
+& 23
+& 15.204
+& 33.903
+& 49.107
+& \emph{false}
+& 40
+& 22
+& 20
+& 4.500
+& 25.081
+& 44.785\\ \cline{2-12}
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+direct build time: 34.252
+model_check: 121.355
+total time: 155.607
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 9.818
+model_check: 47.926
+total time: 91.996
+
+& \emph{false}
+& 64
+& 32
+& 23
+& 34.252
+& 121.355
+& 155.607
+& \emph{false}
+& 40
+& 22
+& 20
+& 9.818
+& 47.926
+& 91.996\\ \cline{2-12}
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+direct build time: 33.935
+model_check: 123.857
+total time: 157.792
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 8.258
+model_check: 49.155
+total time: 91.348
+
+& \emph{false}
+& 64
+& 32
+& 23
+& 33.935
+& 123.857
+& 157.792
+& \emph{false}
+& 40
+& 22
+& 20
+& 8.258
+& 49.155
+& 91.348\\ \cline{2-12}
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 14.053
+model_check: 104.998
+total time: 119.051
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.966
+model_check: 11.641
+total time: 26.660
+
+& \emph{true}
+& 41
+& 17
+& 31
+& 14.053
+& 104.998
+& 119.051
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.966
+& 11.641
+& 26.660\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 12.607
+model_check: 127.341
+total time: 139.948
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.458
+model_check: 14.386
+total time: 27.451
+
+& \emph{true}
+& 41
+& 17
+& 31
+& 12.607
+& 127.341
+& 139.948
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.458
+& 14.386
+& 27.451\\ \cline{2-12}
+
+
+current file: ../test/fib_bench-1.i
+formula:1
+
+
+current file: ../test/fib_bench-1.i
+formula:1
+
+
+current file: ../test/fib_bench-2.i
+formula:1
+
+
+current file: ../test/lazy01.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 8.249
+model_check: 92.801
+total time: 101.050
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.386
+model_check: 15.752
+total time: 24.387
+
+& \emph{true}
+& 41
+& 17
+& 31
+& 8.249
+& 92.801
+& 101.050
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.386
+& 15.752
+& 24.387\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 18.461
+model_check: 70.812
+total time: 89.273
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.268
+model_check: 10.914
+total time: 29.643
+
+& \emph{true}
+& 41
+& 17
+& 31
+& 18.461
+& 70.812
+& 89.273
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.268
+& 10.914
+& 29.643\\ \cline{2-12}
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 17.004
+model_check: 109.768
+total time: 126.772
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.836
+model_check: 10.993
+total time: 28.833
+
+& \emph{true}
+& 41
+& 17
+& 31
+& 17.004
+& 109.768
+& 126.772
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.836
+& 10.993
+& 28.833\\ \cline{2-12}
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/bigshot_p.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 16.227
+model_check: 101.458
+total time: 117.685
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 1.075
+model_check: 15.191
+total time: 32.493
+
+& \emph{true}
+& 41
+& 17
+& 31
+& 16.227
+& 101.458
+& 117.685
+& \emph{true}
+& 3
+& 2
+& 1
+& 1.075
+& 15.191
+& 32.493\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 22.923
+model_check: 143.501
+total time: 166.424
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 1.958
+model_check: 32.652
+total time: 57.533
+
+& \emph{true}
+& 35
+& 15
+& 23
+& 22.923
+& 143.501
+& 166.424
+& \emph{true}
+& 3
+& 2
+& 1
+& 1.958
+& 32.652
+& 57.533\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 10.383
+model_check: 63.236
+total time: 73.619
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.919
+model_check: 14.642
+total time: 25.944
+
+& \emph{true}
+& 32
+& 14
+& 19
+& 10.383
+& 63.236
+& 73.619
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.919
+& 14.642
+& 25.944\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 11.267
+model_check: 53.967
+total time: 65.234
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 1.064
+model_check: 14.226
+total time: 26.557
+
+& \emph{true}
+& 27
+& 12
+& 19
+& 11.267
+& 53.967
+& 65.234
+& \emph{true}
+& 3
+& 2
+& 1
+& 1.064
+& 14.226
+& 26.557\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 6.600
+model_check: 21.416
+total time: 28.016
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 1.092
+model_check: 15.164
+total time: 22.856
+
+& \emph{true}
+& 12
+& 5
+& 4
+& 6.600
+& 21.416
+& 28.016
+& \emph{true}
+& 3
+& 2
+& 1
+& 1.092
+& 15.164
+& 22.856\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 6.941
+model_check: 24.770
+total time: 31.711
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.933
+model_check: 13.734
+total time: 21.608
+
+& \emph{true}
+& 16
+& 6
+& 5
+& 6.941
+& 24.770
+& 31.711
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.933
+& 13.734
+& 21.608\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 7.725
+model_check: 21.913
+total time: 29.638
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.722
+model_check: 14.530
+total time: 22.977
+
+& \emph{true}
+& 18
+& 8
+& 5
+& 7.725
+& 21.913
+& 29.638
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.722
+& 14.530
+& 22.977\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 6.683
+model_check: 21.888
+total time: 28.571
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.885
+model_check: 14.962
+total time: 22.530
+
+& \emph{true}
+& 17
+& 8
+& 5
+& 6.683
+& 21.888
+& 28.571
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.885
+& 14.962
+& 22.530\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 10.148
+model_check: 20.875
+total time: 31.023
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 1.354
+model_check: 14.363
+total time: 25.865
+
+& \emph{true}
+& 17
+& 8
+& 5
+& 10.148
+& 20.875
+& 31.023
+& \emph{true}
+& 3
+& 2
+& 1
+& 1.354
+& 14.363
+& 25.865\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 15.525
+model_check: 26.944
+total time: 42.469
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 2.293
+model_check: 19.771
+total time: 37.589
+
+& \emph{true}
+& 17
+& 8
+& 5
+& 15.525
+& 26.944
+& 42.469
+& \emph{true}
+& 3
+& 2
+& 1
+& 2.293
+& 19.771
+& 37.589\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 9.699
+model_check: 84.300
+total time: 93.999
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 1.072
+model_check: 15.603
+total time: 26.374
+
+& \emph{true}
+& 32
+& 14
+& 19
+& 9.699
+& 84.300
+& 93.999
+& \emph{true}
+& 3
+& 2
+& 1
+& 1.072
+& 15.603
+& 26.374\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 9.912
+model_check: 74.541
+total time: 84.453
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 1.598
+model_check: 17.797
+total time: 29.307
+
+& \emph{true}
+& 32
+& 14
+& 19
+& 9.912
+& 74.541
+& 84.453
+& \emph{true}
+& 3
+& 2
+& 1
+& 1.598
+& 17.797
+& 29.307\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 9.192
+model_check: 73.201
+total time: 82.393
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.990
+model_check: 11.196
+total time: 21.378
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 9.192
+& 73.201
+& 82.393
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.990
+& 11.196
+& 21.378\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 9.244
+model_check: 101.207
+total time: 110.451
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.769
+model_check: 13.675
+total time: 23.688
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 9.244
+& 101.207
+& 110.451
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.769
+& 13.675
+& 23.688\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 9.137
+model_check: 74.746
+total time: 83.883
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 1.041
+model_check: 11.124
+total time: 21.302
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 9.137
+& 74.746
+& 83.883
+& \emph{true}
+& 3
+& 2
+& 1
+& 1.041
+& 11.124
+& 21.302\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 14.397
+model_check: 116.555
+total time: 130.952
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 3.007
+model_check: 22.439
+total time: 39.843
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 14.397
+& 116.555
+& 130.952
+& \emph{true}
+& 3
+& 2
+& 1
+& 3.007
+& 22.439
+& 39.843\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 13.230
+model_check: 112.691
+total time: 125.921
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.779
+model_check: 13.989
+total time: 27.998
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 13.230
+& 112.691
+& 125.921
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.779
+& 13.989
+& 27.998\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+direct build time: 9.785
+model_check: 101.609
+total time: 111.394
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.782
+model_check: 14.851
+total time: 25.418
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 9.785
+& 101.609
+& 111.394
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.782
+& 14.851
+& 25.418\\ \cline{2-12}
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+
+
+current file: ../test/1tmp_test.i
+formula:1
+

@@ -395,7 +395,7 @@ int main(int argc,char **argv) {
 //    test_rg("../pthread-ext/01_inc.i");
     gccpreprocess(filename);
     filename = filename.replace(filename.find(".c"), 2, ".i");
-    construct_and_slice(filename, LTLF, 1, false, false);
+    construct_and_slice(filename, LTLF, 1, true, false);
 //    gccpreprocess("../pthread/fib_bench-2.c");
 //    construct_and_slice("../pthread/fib_bench-2.i",LTLF,1,false,false);
 

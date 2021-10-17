@@ -700,7 +700,7 @@ bool judge_func_def(string s){
     return true;
 }
 
-int trans_dynamic_init(string &s)
+void trans_dynamic_init(string &s)
 {
     stack<string> st;
     string str_pat = "\\W(";
@@ -747,7 +747,7 @@ int trans_dynamic_init(string &s)
 }
 
 
-int trans_advancedef(string &s){
+void trans_advancedef(string &s){
     struct item{
         string content;
         long pos;
