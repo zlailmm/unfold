@@ -4,6 +4,7 @@
 CMakeFiles/PDNet2_0.dir/AST.cpp.o: \
  ../AST.cpp \
  ../AST.h \
+ ../base.h \
  ../y.tab.h
 CMakeFiles/PDNet2_0.dir/BA/Syntax_Tree.cpp.o: \
  ../BA/Syntax_Tree.cpp \
@@ -97,6 +98,18 @@ CMakeFiles/PDNet2_0.dir/lex.y.cpp.o: \
  ../y.tab.h
 CMakeFiles/PDNet2_0.dir/main.cpp.o: \
  ../AST.h \
+ ../MultiSet.h \
+ ../Sort.h \
+ ../base.h \
+ ../cpn.h \
+ ../expression_tree.h \
+ ../main.cpp \
+ ../pdnet_parseoption.h \
+ ../unfold.h \
+ ../v_table.h \
+ ../y.tab.h
+CMakeFiles/PDNet2_0.dir/pdnet_parseoption.cpp.o: \
+ ../AST.h \
  ../BA/Syntax_Tree.h \
  ../BA/VWAA.h \
  ../BA/buchi.h \
@@ -109,12 +122,14 @@ CMakeFiles/PDNet2_0.dir/main.cpp.o: \
  ../cpn.h \
  ../cpn_rg.h \
  ../expression_tree.h \
- ../main.cpp \
+ ../pdnet_parseoption.cpp \
+ ../pdnet_parseoption.h \
  ../product.h \
  ../unfold.h \
  ../v_table.h \
  ../y.tab.h
 CMakeFiles/PDNet2_0.dir/pre_process.cpp.o: \
+ ../base.h \
  ../pre_process.cpp
 CMakeFiles/PDNet2_0.dir/product.cpp.o: \
  ../AST.h \
@@ -161,6 +176,18 @@ CMakeFiles/PDNet2_0.dir/v_table.cpp.o: \
  ../AST.h \
  ../v_table.cpp \
  ../v_table.h
+CMakeFiles/PDNet2_0.dir/xmlTransform.cpp.o: \
+ ../AST.h \
+ ../BA/tinystr.h \
+ ../BA/tinyxml.h \
+ ../MultiSet.h \
+ ../Sort.h \
+ ../base.h \
+ ../cpn.h \
+ ../expression_tree.h \
+ ../v_table.h \
+ ../xmlTransform.cpp \
+ ../y.tab.h
 CMakeFiles/PDNet2_0.dir/y.tab.cpp.o: \
  ../AST.h \
  ../y.tab.cpp \

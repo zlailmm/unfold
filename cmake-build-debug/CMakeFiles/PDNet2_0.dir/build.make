@@ -339,9 +339,35 @@ CMakeFiles/PDNet2_0.dir/BA/VWAA.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PDNet2_0.dir/BA/VWAA.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leo/pdnet/project/PUnf/BA/VWAA.cpp -o CMakeFiles/PDNet2_0.dir/BA/VWAA.cpp.s
 
+CMakeFiles/PDNet2_0.dir/pdnet_parseoption.cpp.o: CMakeFiles/PDNet2_0.dir/flags.make
+CMakeFiles/PDNet2_0.dir/pdnet_parseoption.cpp.o: ../pdnet_parseoption.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leo/pdnet/project/PUnf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/PDNet2_0.dir/pdnet_parseoption.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PDNet2_0.dir/pdnet_parseoption.cpp.o -c /home/leo/pdnet/project/PUnf/pdnet_parseoption.cpp
+
+CMakeFiles/PDNet2_0.dir/pdnet_parseoption.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PDNet2_0.dir/pdnet_parseoption.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leo/pdnet/project/PUnf/pdnet_parseoption.cpp > CMakeFiles/PDNet2_0.dir/pdnet_parseoption.cpp.i
+
+CMakeFiles/PDNet2_0.dir/pdnet_parseoption.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PDNet2_0.dir/pdnet_parseoption.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leo/pdnet/project/PUnf/pdnet_parseoption.cpp -o CMakeFiles/PDNet2_0.dir/pdnet_parseoption.cpp.s
+
+CMakeFiles/PDNet2_0.dir/xmlTransform.cpp.o: CMakeFiles/PDNet2_0.dir/flags.make
+CMakeFiles/PDNet2_0.dir/xmlTransform.cpp.o: ../xmlTransform.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leo/pdnet/project/PUnf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/PDNet2_0.dir/xmlTransform.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PDNet2_0.dir/xmlTransform.cpp.o -c /home/leo/pdnet/project/PUnf/xmlTransform.cpp
+
+CMakeFiles/PDNet2_0.dir/xmlTransform.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PDNet2_0.dir/xmlTransform.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leo/pdnet/project/PUnf/xmlTransform.cpp > CMakeFiles/PDNet2_0.dir/xmlTransform.cpp.i
+
+CMakeFiles/PDNet2_0.dir/xmlTransform.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PDNet2_0.dir/xmlTransform.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leo/pdnet/project/PUnf/xmlTransform.cpp -o CMakeFiles/PDNet2_0.dir/xmlTransform.cpp.s
+
 CMakeFiles/PDNet2_0.dir/unfold.cpp.o: CMakeFiles/PDNet2_0.dir/flags.make
 CMakeFiles/PDNet2_0.dir/unfold.cpp.o: ../unfold.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leo/pdnet/project/PUnf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/PDNet2_0.dir/unfold.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leo/pdnet/project/PUnf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/PDNet2_0.dir/unfold.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PDNet2_0.dir/unfold.cpp.o -c /home/leo/pdnet/project/PUnf/unfold.cpp
 
 CMakeFiles/PDNet2_0.dir/unfold.cpp.i: cmake_force
@@ -375,6 +401,8 @@ PDNet2_0_OBJECTS = \
 "CMakeFiles/PDNet2_0.dir/BA/tinyxmlerror.cpp.o" \
 "CMakeFiles/PDNet2_0.dir/BA/tinyxmlparser.cpp.o" \
 "CMakeFiles/PDNet2_0.dir/BA/VWAA.cpp.o" \
+"CMakeFiles/PDNet2_0.dir/pdnet_parseoption.cpp.o" \
+"CMakeFiles/PDNet2_0.dir/xmlTransform.cpp.o" \
 "CMakeFiles/PDNet2_0.dir/unfold.cpp.o"
 
 # External object files for target PDNet2_0
@@ -401,10 +429,12 @@ PDNet2_0: CMakeFiles/PDNet2_0.dir/BA/tinyxml.cpp.o
 PDNet2_0: CMakeFiles/PDNet2_0.dir/BA/tinyxmlerror.cpp.o
 PDNet2_0: CMakeFiles/PDNet2_0.dir/BA/tinyxmlparser.cpp.o
 PDNet2_0: CMakeFiles/PDNet2_0.dir/BA/VWAA.cpp.o
+PDNet2_0: CMakeFiles/PDNet2_0.dir/pdnet_parseoption.cpp.o
+PDNet2_0: CMakeFiles/PDNet2_0.dir/xmlTransform.cpp.o
 PDNet2_0: CMakeFiles/PDNet2_0.dir/unfold.cpp.o
 PDNet2_0: CMakeFiles/PDNet2_0.dir/build.make
 PDNet2_0: CMakeFiles/PDNet2_0.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/leo/pdnet/project/PUnf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable PDNet2_0"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/leo/pdnet/project/PUnf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable PDNet2_0"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PDNet2_0.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

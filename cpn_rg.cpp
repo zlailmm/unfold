@@ -74,7 +74,7 @@ Binding* bindingcid(Product_t cid,SORTID sid,condition_tree_node *tokennode){
                     newbinding->value = (token)(new StringSortValue);
                 else {
                     cerr << "ERROR!variable can not be a productsort!" << endl;
-                    exit(-1);
+                    throw "ERROR!variable can not be a productsort!";
                 }
                 Bucket bkt;
                 cid[offset]->getcolor(bkt);
@@ -99,7 +99,7 @@ Binding* bindingcid(Product_t cid,SORTID sid,condition_tree_node *tokennode){
                 newbinding->value = (token)(new StringSortValue);
             else {
                 cerr << "ERROR!variable can not be a productsort!" << endl;
-                exit(-1);
+                throw "ERROR!variable can not be a productsort!";
             }
             Bucket bkt;
             cid[offset]->getcolor(bkt);
@@ -519,31 +519,31 @@ void RG_NODE::get_FireTranQ(CPN *cpn) {
     if(tranQ_obtained)
         return;
     tranQ_obtained = true;
-//    auto transPriNum = cpn->get_transPriNum();
-//    ///先判断优先变迁
-//    for(int i=0;i<transPriNum.size();i++)
-//    {
-//
-//        vector<Binding *>bindings;
-//        auto tt = cpn->findT_byindex(transPriNum[i]);
-//        if(tt->isabort)
-//            continue;
-//        if(is_Fireable(tt,cpn,bindings,marking)) {
-//            firenum++;
-////            tranQ->insert(&cpn->transition[i]);
-//            FireTranQ *tmptranQ = new FireTranQ;
-//            tmptranQ->bindings = bindings;
-//            tmptranQ->transition = tt;
-//            tmptranQ->next = tranQ->next;
-//            tranQ->next = tmptranQ;
-//
-//        }
-//    }
+    auto transPriNum = cpn->get_transPriNum();
 
+///先判断优先变迁
+    for(int i=0;i<transPriNum.size();i++)
+    {
+
+        vector<Binding *>bindings;
+        auto tt = cpn->findT_byindex(transPriNum[i]);
+        if(tt->isabort)
+            continue;
+        if(is_Fireable(tt,cpn,bindings,marking)) {
+            firenum++;
+//            tranQ->insert(&cpn->transition[i]);
+            FireTranQ *tmptranQ = new FireTranQ;
+            tmptranQ->bindings = bindings;
+            tmptranQ->transition = tt;
+            tmptranQ->next = tranQ->next;
+            tranQ->next = tmptranQ;
+
+        }
+    }
     for(int i=0;i<cpn->get_transcount();i++)
     {
-//        if(exist_in(transPriNum,short(i)))
-//            continue;
+        if(exist_in(transPriNum,short(i)))
+            continue;
         vector<Binding *>bindings;
         auto tt = cpn->findT_byindex(i);
         if(tt->isabort)
@@ -566,7 +566,7 @@ index_t RG_NODE::Hash() {
     for(int i=0;i<marking.placecount;i++)
     {
 //        marking.mss[i].Hash();
-        hv += i * marking.mss[i].Hash();
+        hv += i * marking.mss[i].Hash() + i;
     }
 
     return hv;
@@ -746,12 +746,15 @@ RG_NODE* RG::nodeExist(RG_NODE *node) {
 //    end = clock();
 //    cout<<"hash time:"<<end-start<<endl;
     RG_NODE *exist = rgnodetable[hv];
+//    int hash_count = 0;
     while(exist)
     {
         if(node->marking == exist->marking)
             return exist;
         exist = exist->next;
+//        hash_count++;
     }
+//    cout<<"hash_count:"<<hash_count<<endl;
     return NULL;
 }
 //map<int,short> conflict_count;

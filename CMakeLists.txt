@@ -3,7 +3,7 @@ project(PDNet2_0)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -O0")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -O0")#-Ofast
 
 add_executable(PDNet2_0 main.cpp   v_table.cpp v_table.h y.tab.cpp y.tab.h lex.y.cpp
          expression_tree.cpp expression_tree.h AST.cpp AST.h pre_process.cpp cpn.h cpn.cpp base.cpp base.h MultiSet.h MultiSet.cpp Sort.h cpn_rg.h cpn_rg.cpp slice.cpp
@@ -22,7 +22,7 @@ add_executable(PDNet2_0 main.cpp   v_table.cpp v_table.h y.tab.cpp y.tab.h lex.y
         BA/tinyxmlerror.cpp
         BA/tinyxmlparser.cpp
         BA/VWAA.cpp
-        BA/VWAA.h
+        BA/VWAA.h pdnet_parseoption.h pdnet_parseoption.cpp xmlTransform.cpp
         unfold.cpp unfold.h)
 
 target_link_libraries(PDNet2_0 tcmalloc)

@@ -127,9 +127,12 @@ size_t Bucket::hash() {
 //                count += static_cast<size_t >(str[i]);
 //            }
 //            return count;
-            if(str.size() == 0)
+            if(str.length() == 0)
                 return 1 * HASH_OFFSET;
-            return static_cast<size_t>(str[0]) * HASH_OFFSET * HASH_OFFSET * HASH_OFFSET * HASH_OFFSET;
+            size_t str_hashValue = 0;
+            for(int i=0;i<str.length();i++)
+                str_hashValue += static_cast<size_t>(str[i]) * HASH_OFFSET;
+            return  str_hashValue;
         }
         case dot: {
             return 1 * HASH_OFFSET * HASH_OFFSET * HASH_OFFSET;

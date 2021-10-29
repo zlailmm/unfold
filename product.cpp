@@ -517,17 +517,23 @@ void CPN_Product_Automata::Tarjan(CPN_Product *pnode) {
                         return;
                     RG_NODE *newnode = new RG_NODE;
                     newnode->marking.init_marking(pnode->RGname_ptr->marking);
+
                     Marking_after_fire(newnode->marking, tranQ->transition, tranQ->bindings[k], cpn);
+
                     RG_NODE *rgseed = rg->nodeExist(newnode);
+
                     if (rgseed == NULL) {
+
                         rgseed = newnode;
                         newnode->fathernum = pnode->RGname_ptr->num;
                         newnode->last_tran = tranQ->transition->getid();
                         rgseed->get_FireTranQ(cpn);
                         rg->addRGNode(newnode);
+
                     } else {
                         delete newnode;
                     }
+
                     if (rgseed->tranQ_obtained == false) {
                         cerr << "fireset hasn't been calculated" << endl;
                     }

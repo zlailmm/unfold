@@ -169,6 +169,12 @@
 		<Unit filename="/home/leo/pdnet/project/PUnf/main.cpp">
 			<Option target="PDNet2_0"/>
 		</Unit>
+		<Unit filename="/home/leo/pdnet/project/PUnf/pdnet_parseoption.cpp">
+			<Option target="PDNet2_0"/>
+		</Unit>
+		<Unit filename="/home/leo/pdnet/project/PUnf/pdnet_parseoption.h">
+			<Option target="PDNet2_0"/>
+		</Unit>
 		<Unit filename="/home/leo/pdnet/project/PUnf/pre_process.cpp">
 			<Option target="PDNet2_0"/>
 		</Unit>
@@ -191,6 +197,9 @@
 			<Option target="PDNet2_0"/>
 		</Unit>
 		<Unit filename="/home/leo/pdnet/project/PUnf/v_table.h">
+			<Option target="PDNet2_0"/>
+		</Unit>
+		<Unit filename="/home/leo/pdnet/project/PUnf/xmlTransform.cpp">
 			<Option target="PDNet2_0"/>
 		</Unit>
 		<Unit filename="/home/leo/pdnet/project/PUnf/y.tab.cpp">

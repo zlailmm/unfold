@@ -513,6 +513,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PDNet2_0.dir/build.make CMakeFiles/PDNet2_0.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+pdnet_parseoption.o: pdnet_parseoption.cpp.o
+.PHONY : pdnet_parseoption.o
+
+# target to build an object file
+pdnet_parseoption.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PDNet2_0.dir/build.make CMakeFiles/PDNet2_0.dir/pdnet_parseoption.cpp.o
+.PHONY : pdnet_parseoption.cpp.o
+
+pdnet_parseoption.i: pdnet_parseoption.cpp.i
+.PHONY : pdnet_parseoption.i
+
+# target to preprocess a source file
+pdnet_parseoption.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PDNet2_0.dir/build.make CMakeFiles/PDNet2_0.dir/pdnet_parseoption.cpp.i
+.PHONY : pdnet_parseoption.cpp.i
+
+pdnet_parseoption.s: pdnet_parseoption.cpp.s
+.PHONY : pdnet_parseoption.s
+
+# target to generate assembly for a file
+pdnet_parseoption.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PDNet2_0.dir/build.make CMakeFiles/PDNet2_0.dir/pdnet_parseoption.cpp.s
+.PHONY : pdnet_parseoption.cpp.s
+
 pre_process.o: pre_process.cpp.o
 .PHONY : pre_process.o
 
@@ -633,6 +657,30 @@ v_table.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PDNet2_0.dir/build.make CMakeFiles/PDNet2_0.dir/v_table.cpp.s
 .PHONY : v_table.cpp.s
 
+xmlTransform.o: xmlTransform.cpp.o
+.PHONY : xmlTransform.o
+
+# target to build an object file
+xmlTransform.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PDNet2_0.dir/build.make CMakeFiles/PDNet2_0.dir/xmlTransform.cpp.o
+.PHONY : xmlTransform.cpp.o
+
+xmlTransform.i: xmlTransform.cpp.i
+.PHONY : xmlTransform.i
+
+# target to preprocess a source file
+xmlTransform.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PDNet2_0.dir/build.make CMakeFiles/PDNet2_0.dir/xmlTransform.cpp.i
+.PHONY : xmlTransform.cpp.i
+
+xmlTransform.s: xmlTransform.cpp.s
+.PHONY : xmlTransform.s
+
+# target to generate assembly for a file
+xmlTransform.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PDNet2_0.dir/build.make CMakeFiles/PDNet2_0.dir/xmlTransform.cpp.s
+.PHONY : xmlTransform.cpp.s
+
 y.tab.o: y.tab.cpp.o
 .PHONY : y.tab.o
 
@@ -714,6 +762,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... pdnet_parseoption.o"
+	@echo "... pdnet_parseoption.i"
+	@echo "... pdnet_parseoption.s"
 	@echo "... pre_process.o"
 	@echo "... pre_process.i"
 	@echo "... pre_process.s"
@@ -729,6 +780,9 @@ help:
 	@echo "... v_table.o"
 	@echo "... v_table.i"
 	@echo "... v_table.s"
+	@echo "... xmlTransform.o"
+	@echo "... xmlTransform.i"
+	@echo "... xmlTransform.s"
 	@echo "... y.tab.o"
 	@echo "... y.tab.i"
 	@echo "... y.tab.s"

@@ -4,6 +4,8 @@
 
 #include "unfold.h"
 
+//解决搭建时，时间错误，控制台代码
+// find . -type f -exec touch {} \;
 /*
  * 0-CPN的初始标识，库所p中有颜色为c的token，将含初始标识的库所转化为条件b，并用(p,c)标记；
    1-选择一个变迁t；
@@ -33,10 +35,10 @@ void UNFPDN::init() {
 
 void UNFPDN::get_PosCutoff(CPN *cpn) {
     for (auto i = 0; i < cpn->get_placecount(); i++) {
-        auto p=cpn->findP_byindex(i);
+        auto p = cpn->findP_byindex(i);
         auto p_Pro = p->get_producer();
         if (p->getMultiSet().getcolorcount() != 0) {
-            auto p_con=p->get_consumer();
+            auto p_con = p->get_consumer();
             for (auto j = p_con.begin(); j != p_con.end(); j++) {
                 posCutoff.insert(j->idx);
             }
@@ -430,6 +432,9 @@ bool is_cut_off(CUT *cut_e, UNFPDN *unfpdn, int &cut_e_idx) {
 
     for (auto i = unfpdn->cut_off.begin(); i != unfpdn->cut_off.end(); i++) {
         auto cut_off_point = *i;
+
+        if (!unfpdn->matrix_Conf[cut_e->e_idx][cut_off_point->e_idx])
+            continue;
         vector<pair<int, token>> h_cut_off;
         vector<pair<int, token>> h_cut_e;
 
@@ -445,10 +450,6 @@ bool is_cut_off(CUT *cut_e, UNFPDN *unfpdn, int &cut_e_idx) {
         }
         sort(h_cut_off.begin(), h_cut_off.end(), cmp);
         sort(h_cut_e.begin(), h_cut_e.end(), cmp);
-        //debug+
-        if (cut_off_point->e_idx == 3 && unfpdn->transitioncount == 5)
-            cout << "stop" << endl;
-        //debug-
         if (cut_off_equal(h_cut_e, h_cut_off)) {
             cut_e_idx = cut_off_point->e_idx;
             return true;
@@ -567,11 +568,16 @@ Binding_unf *bindingToken(condition_tree_node *node, int place_idx, TID_t tid, U
     bool hasindex, hastid;
     Binding_unf *result, *tmpbinding;
     //    MultiSet multiset = cpn->findP_byindex(place_idx)->getMultiSet();
-    MultiSet *multiset;
+    MultiSet *multiset = new MultiSet;
     bool found = 0;
     for (auto i = cut->b_idx_vec.begin(); i != cut->b_idx_vec.end(); i++) {
-        if (unfpdn->place[*i].cpn_index == place_idx)
-            multiset = &unfpdn->place[*i].token_record;
+        if (unfpdn->place[*i].cpn_index == place_idx) {
+            if (found == 0) {//第一次找到
+                multiset->generateFromToken(unfpdn->place[*i].token_record.getonlytoken());
+                found = 1;
+            } else
+                multiset->PLUS(unfpdn->place[*i].token_record);
+        }
     }
     //    Tokens *tokens = multiset->tokenQ->next;
 
@@ -596,16 +602,9 @@ Binding_unf *bindingToken(condition_tree_node *node, int place_idx, TID_t tid, U
             result->next->value = (token) (new IntegerSortValue);
             Bucket bkt;
             auto token = multiset->getonlytoken();
-//            for (auto i = cut->b_idx_vec.begin(); i != cut->b_idx_vec.end(); i++) {
-//                if (unfpdn->place[*i].cpn_index == place_idx)
-//                    token = unfpdn->place[*i].token_record.getonlytoken();
-//            }
-            //            auto condition = unfpdn->place[unfpdn->map_Plc_cpn2unf.lower_bound(place_idx)->second];
-            //            auto token = condition.initMarking.getonlytoken();
             token->getcolor(bkt);
             result->next->value->setcolor(bkt);
-            //            color_copy(Integer, 0, tokens->color, result->next->value);
-
+//            color_copy(Integer, 0, tokens->color, result->next->value);
             return result;
         } else
             return result;
@@ -623,6 +622,7 @@ Binding_unf *bindingToken(condition_tree_node *node, int place_idx, TID_t tid, U
     condition_tree_node *indexnode, *tidnode;
     indexnode = tidnode = node->left;
 
+    auto tokens = multiset->getmapTokens();
     if (hasindex && hastid) {
         tidnode = tidnode->right->right;
         while (tidnode->right) {
@@ -631,15 +631,10 @@ Binding_unf *bindingToken(condition_tree_node *node, int place_idx, TID_t tid, U
             offset++;
         }
         index = atoi(indexnode->left->value.c_str());
-        bool notfound = 1;
-        //        auto c2b = unfpdn->map_Plc_cpn2unf.lower_bound(place_idx);
-        for (auto i = cut->b_idx_vec.begin(); i != cut->b_idx_vec.end(); i++) {
-            if (unfpdn->place[*i].cpn_index != place_idx)
-                continue;
+        auto token = tokens.begin();
+        while (token != tokens.end()) {
             Bucket cid_bkt, tid_bkt, index_bkt;
-            //            auto token = unfpdn->place[c2b->second].initMarking.getonlytoken();
-            auto token = unfpdn->place[*i].token_record.getonlytoken();
-            token->getcolor(cid_bkt);
+            token->first->getcolor(cid_bkt);
             cid->setcolor(cid_bkt);
             TID_t sub_tid;
             Integer_t sub_index;
@@ -648,7 +643,6 @@ Binding_unf *bindingToken(condition_tree_node *node, int place_idx, TID_t tid, U
             sub_index = index_bkt.integer;
             sub_tid = tid_bkt.str;
             if (sub_index == index && tid == sub_tid) {
-                notfound = 0;
                 tmpbinding = bindingcid_unf(cid_bkt.pro, sid, node);
                 Binding_unf *end = tmpbinding;
                 while (end->next)
@@ -658,10 +652,10 @@ Binding_unf *bindingToken(condition_tree_node *node, int place_idx, TID_t tid, U
                 delete tmpbinding;
                 break;
             }
+            token++;
         }
-        if (notfound)
-//            throw "ERROR!can't binding correctly!";
-            return result;
+        if (token == tokens.end())
+            throw "ERROR!can't binding correctly!";
     } else if (hasindex) {
         tidnode = tidnode->right->right;
         while (tidnode) {
@@ -670,20 +664,14 @@ Binding_unf *bindingToken(condition_tree_node *node, int place_idx, TID_t tid, U
             offset++;
         }
         index = atoi(indexnode->left->value.c_str());
-        bool notfound = 1;
-        //        auto c2b = unfpdn->map_Plc_cpn2unf.lower_bound(place_idx);
-        //        for (; c2b != unfpdn->map_Plc_cpn2unf.upper_bound(place_idx); c2b++) {
-        for (auto i = cut->b_idx_vec.begin(); i != cut->b_idx_vec.end(); i++) {
-            if (unfpdn->place[*i].cpn_index != place_idx)
-                continue;
+        auto token = tokens.begin();
+        while (token != tokens.end()) {
             Bucket cid_bkt, index_bkt;
-            auto token = unfpdn->place[*i].token_record.getonlytoken();
-            token->getcolor(cid_bkt);
+            token->first->getcolor(cid_bkt);
             Integer_t sub_index;
             cid_bkt.pro[offset - 1 + 1]->getcolor(index_bkt);
             sub_index = index_bkt.integer;
             if (sub_index == index) {
-                notfound = 0;
                 tmpbinding = bindingcid_unf(cid_bkt.pro, sid, node);
                 Binding_unf *end = tmpbinding;
                 while (end->next)
@@ -693,30 +681,24 @@ Binding_unf *bindingToken(condition_tree_node *node, int place_idx, TID_t tid, U
                 delete tmpbinding;
                 break;
             }
+            token++;
         }
-        if (notfound)
-//            throw "ERROR!can't binding correctly!";
-            return result;
+        if (token == tokens.end())
+            throw "ERROR!can't binding correctly!";
     } else if (hastid) {
         tidnode = tidnode->right;
         while (tidnode->right) {
             tidnode = tidnode->right;
             offset++;
         }
-        bool notfound = 1;
-        //        auto c2b = unfpdn->map_Plc_cpn2unf.lower_bound(place_idx);
-        //        for (; c2b != unfpdn->map_Plc_cpn2unf.upper_bound(place_idx); c2b++) {
-        for (auto i = cut->b_idx_vec.begin(); i != cut->b_idx_vec.end(); i++) {
-            if (unfpdn->place[*i].cpn_index != place_idx)
-                continue;
+        auto token = tokens.begin();
+        while (token != tokens.end()) {
             Bucket cid_bkt, tid_bkt;
-            auto token = unfpdn->place[*i].token_record.getonlytoken();
-            token->getcolor(cid_bkt);
+            token->first->getcolor(cid_bkt);
             TID_t sub_tid;
             cid_bkt.pro[offset - 1 + 2]->getcolor(tid_bkt);
             sub_tid = tid_bkt.str;
             if (sub_tid == tid) {
-                notfound = 0;
                 tmpbinding = bindingcid_unf(cid_bkt.pro, sid, node);
                 Binding_unf *end = tmpbinding;
                 while (end->next)
@@ -726,27 +708,21 @@ Binding_unf *bindingToken(condition_tree_node *node, int place_idx, TID_t tid, U
                 delete tmpbinding;
                 break;
             }
+            token++;
         }
-        if (notfound)
-//            throw "ERROR!can't binding correctly!";
-            return result;
+        if (token == tokens.end())
+            throw "ERROR!can't binding correctly!";
     } else {
         tidnode = tidnode->right;
         while (tidnode) {
             tidnode = tidnode->right;
             offset++;
         }
-        bool notfound = 1;
-        //        auto c2b = unfpdn->map_Plc_cpn2unf.lower_bound(place_idx);
-        //        for (; c2b != unfpdn->map_Plc_cpn2unf.upper_bound(place_idx); c2b++) {
-        for (auto i = cut->b_idx_vec.begin(); i != cut->b_idx_vec.end(); i++) {
-            if (unfpdn->place[*i].cpn_index != place_idx)
-                continue;
+        auto token = tokens.begin();
+        while (token != tokens.end()) {
             Bucket cid_bkt;
-            auto token = unfpdn->place[*i].token_record.getonlytoken();
-            token->getcolor(cid_bkt);
+            token->first->getcolor(cid_bkt);
             {
-                notfound = 0;
                 tmpbinding = bindingcid_unf(cid_bkt.pro, sid, node);
                 Binding_unf *end = tmpbinding;
                 while (end->next)
@@ -756,16 +732,18 @@ Binding_unf *bindingToken(condition_tree_node *node, int place_idx, TID_t tid, U
                 delete tmpbinding;
                 break;
             }
+            token++;
         }
-        if (notfound)
-//            throw "ERROR!can't binding correctly!";
-            return result;
+        if (token == tokens.end())
+            throw "ERROR!can't binding correctly!";
     }
     //    delete[] cid;
     return result;
 }
 
 void get_bindings_and_x(int t_idx, CUT *cut, UNFPDN *unfpdn, CPN *cpn) {
+    //Binding control places first
+    //transition's happen or not depends on control places
     unfpdn->bindings.clear();
     unfpdn->xs.clear();
 
@@ -910,6 +888,10 @@ void get_bindings_and_x(int t_idx, CUT *cut, UNFPDN *unfpdn, CPN *cpn) {
         auto T_producer = cpn->findT_byindex(t_idx)->get_producer();
         //bool has_token = 1;
         for (unsigned int j = 0; j < T_producer.size(); j++) {
+            //debug+
+            if (unfpdn->transitioncount == 11 && j == 5)
+                cout << endl;
+            //debug-
             index_t idx = T_producer[j].idx;
             auto pp = cpn->findP_byindex(idx);
             if (!pp->getiscontrolP()) {
@@ -950,7 +932,7 @@ void get_bindings_and_x(int t_idx, CUT *cut, UNFPDN *unfpdn, CPN *cpn) {
             }
         }
         //if (!has_token)
-        //    continue;
+        //continue;
         bindings.push_back(binding);
         xs.push_back(x);
     }
@@ -1008,116 +990,206 @@ bool is_in_pe(PE *pe, vector<PE *> pe_unf) {
     return false;
 }
 
-void UNFOLD::find_new_pe_by_t(int t_idx, CUT *cut_cur) {
+void UNFOLD::find_new_pe_by_t(int t_idx, CUT *cut_cur, bool is_mino = 0) {
     CTransition *t_cpn = cpn->findT_byindex(t_idx);
     vector<vector<pair<int, token>>> token_vector, binding_vector;
 
-    //    for (auto i = t_cpn->get_producer().begin(); i != t_cpn->get_producer().end(); i++) {
-    //        //判断cpn->place[j->idx]是否有对应的b   j->idx指cpn中place的下标
-    //        if (unfpdn->map_Plc_cpn2unf.find(i->idx) == unfpdn->map_Plc_cpn2unf.cend()) {
-    //            return;
-    //        }
-    //        bool has_token = 0;
-    //        auto j = unfpdn->map_Plc_cpn2unf.lower_bound(i->idx);
-    //        for (; j != unfpdn->map_Plc_cpn2unf.upper_bound(i->idx); j++) {
-    //            if (unfpdn->place[j->second].initMarking.getcolorcount() != 0) {
-    //                has_token = 1;
-    //            }
-    //        }
-    //        if (!has_token)
-    //            return;
-    //    }
     //    3-对于变迁t的所有绑定bp，是一个绑定元素（t，bp），
     //    3.1- 对于 (t, bp) ，新建事件e ，并标记为t。
     //    3.2- 事件e建立前后弧连接。每个绑定元素必须满足G（t），并且每个事件e的前集必须是co-set，否则不应生成e。
     //    4- 返回第1步。
-    //cout << i << ":" << cpn->transition[i].producer.size() << " ";
-    //cout<<i<<"endl";
 
-    //token_vector = get_token_vector(t_cpn, cpn);//token_vector保存t的前置库所的token  行：库所  列：token
-    //    indexes.resize(token_vector.size());
-    //    indexes.clear();
-    //build_binding_vector(token_vector, binding_vector);
-    vector<vector<int>> px;
+    //vector<vector<int>> px_c;
+    //vector<vector<int>> px_nc;
     //将前集库所对应的全部条件都找到，
-    for (auto i = t_cpn->get_producer().begin(); i != t_cpn->get_producer().end(); i++) {
-        vector<int> px_s;
-//        for (auto j = unfpdn->map_Plc_cpn2unf.lower_bound(i->idx);
-//             j != unfpdn->map_Plc_cpn2unf.upper_bound(i->idx); j++) {
-        for (auto j = cut_cur->b_idx_vec.begin(); j != cut_cur->b_idx_vec.end(); j++) {
-            if (unfpdn->place[*j].cpn_index == i->idx)
-                px_s.push_back(*j);
-        }
-        if (px_s.empty())
-            return;
-        px.push_back(px_s);
-    }
+//    for (auto i = t_cpn->get_producer().begin(); i != t_cpn->get_producer().end(); i++) {
+//        vector<int> px_s;
+//        for (auto j = cut_cur->b_idx_vec.begin(); j != cut_cur->b_idx_vec.end(); j++) {
+//            if (unfpdn->place[*j].cpn_index == i->idx)
+//                px_s.push_back(*j);
+//        }
+//        if (px_s.empty())
+//            return;
+//        if (cpn->findP_byindex(i->idx)->getiscontrolP())
+//            px_c.push_back(px_s);
+//        else
+//            px_nc.push_back(px_s);
+//    }
     //再做排列组合
     //time1 = clock();
-    indexes.resize(px.size());
-    vector<vector<int>> x_sets;
-    build_binding_vector(px, x_sets);
+
+//    indexes.resize(px_c.size());
+//    vector<vector<int>> x_sets;
+//    build_binding_vector(px_c, x_sets);
+
     //time2 = clock();
     //cout << "time1:" << time1 << endl << "time2:" << time2 << endl << "diff:"
     //     << (double) (time2 - time1) / CLOCKS_PER_SEC << endl;
 
-    for (auto ix_set = x_sets.begin(); ix_set != x_sets.end(); ix_set++) {
-        vector<int> x_set = *ix_set;
-        //判断该x_set为co_set
-        if (!is_coset(x_set, unfpdn))
-            continue;
+//    for (auto ix_set = x_sets.begin(); ix_set != x_sets.end(); ix_set++) {
+//        vector<int> x_set = *ix_set;
+//        vector<int> x_set1= *ix_set;
+//
+//        //添加非控制库所
+//        for (auto inc = px_nc.begin(); inc != px_nc.end(); inc++) {
+//            x_set.insert(x_set.end(), inc->begin(), inc->end());
+//        }
+//
+//        //判断该x_set为co_set
+//        if (!is_coset(x_set, unfpdn))
+//            continue;
+//
+//        CUT *cut = new CUT;
+//        cut->b_idx_vec = x_set;
+    //get_binding
+    get_bindings_and_x(t_idx, cut_cur, unfpdn, cpn);
+    if (unfpdn->bindings.empty())
+        return;
+    //judge guard
+    if (t_cpn->get_hasguard()) {
+        //auto iter_x = unfpdn->xs.begin();
+        for (auto iter = unfpdn->bindings.begin(); iter != unfpdn->bindings.end();) {
+            Integer_t res;
+            MultiSet ms;
 
-        CUT *cut = new CUT;
-        cut->b_idx_vec = x_set;
-        //get_binding
-        get_bindings_and_x(t_idx, cut, unfpdn, cpn);
-        if (unfpdn->bindings.empty())
-            return;
-        //judge guard
-        if (t_cpn->get_hasguard()) {
-            auto iter_x = unfpdn->xs.begin();
-            for (auto iter = unfpdn->bindings.begin(); iter != unfpdn->bindings.end();) {
-                Integer_t res;
-                MultiSet ms;
+            //            ms.tid = Integer;
+            //            ms.sid = 0;
+            BindingVariable(*iter, cpn);
+            //            ms.Exp2MS(cpn,transition->guard.root,0,0,false);
+            //            ms.tokenQ->next->color->getColor(res);
+            cpn->CT2MS(t_cpn->get_guard(), ms, Integer, 0);
+            Bucket bkt;
+            ms.getonlytoken()->getcolor(bkt);
+            res = bkt.integer;
+            if (res == 0) {
+                iter = unfpdn->bindings.erase(iter);
+                //iter_x = unfpdn->xs.erase(iter_x);
+            } else {
+                iter++;
+                //iter_x++;
+            }
+        }
+    }
+    //    3.2- 事件e建立前后弧连接。每个绑定元素必须满足G（t），并且每个事件e的前集必须是co-set，否则不应生成e。
+    //    4- 返回第1步。
 
-                //            ms.tid = Integer;
-                //            ms.sid = 0;
-                BindingVariable(*iter, cpn);
-                //            ms.Exp2MS(cpn,transition->guard.root,0,0,false);
-                //            ms.tokenQ->next->color->getColor(res);
-                cpn->CT2MS(t_cpn->get_guard(), ms, Integer, 0);
-                Bucket bkt;
-                ms.getonlytoken()->getcolor(bkt);
-                res = bkt.integer;
-                if (res == 0) {
-                    iter = unfpdn->bindings.erase(iter);
-                    iter_x = unfpdn->xs.erase(iter_x);
-                } else {
-                    iter++;
-                    iter_x++;
+    //计算所有x组合
+//        auto T_producer= t_cpn->get_producer();
+//        for(int i=0;i<T_producer.size();i++){
+//            MultiSet ms;
+//            index_t idx = T_producer[i].idx;
+//            if(cpn->findP_byindex(idx)->getiscontrolP())
+//                continue;
+//            auto pp = cpn->findP_byindex(idx);
+//            cpn->CT2MS(T_producer[i].arc_exp,ms,pp->gettid(),pp->getsid());
+//
+//            if(ms.getcolorcount()==0){
+//                for(auto iter3=x_set.begin();iter3!=x_set.end();iter3++){
+//                    if(unfpdn->place[*iter3].cpn_index==idx){
+//                        x_set1.push_back(*iter3);
+//                    }
+//                }
+//            }
+//            auto iter2 = ms.getmapTokens().begin();
+//            while(iter2 != ms.getmapTokens().end()){
+//                int count=iter2->second;
+//                for(auto iter3=x_set.begin();iter3!=x_set.end();iter3++){
+//                    if(unfpdn->place[*iter3].cpn_index==idx){
+//                        Bucket bkt1, bkt2;
+//                        unfpdn->place[*iter3].token_record.getonlytoken()->getcolor(bkt1);
+//                        iter2->first->getcolor(bkt2);
+//                        if(bkt1==bkt2) {
+//                            x_set1.push_back(*iter3);
+//                            count--;
+//                            if (!count)
+//                                break;
+//                        }
+//                    }
+//                }
+//                iter2++;
+//            }
+//        }
+    //产生pe
+    //debug+
+    if(unfpdn->transitioncount==1)
+        cout<<endl;
+    //debug-
+    for (auto ibinding = 0; ibinding < unfpdn->bindings.size(); ibinding++) {
+        vector<int> x_set;
+        auto binding = unfpdn->bindings[ibinding];
+        BindingVariable(binding, cpn);
+        auto T_producer = t_cpn->get_producer();
+        for (unsigned int i = 0; i < T_producer.size(); i++) {
+            MultiSet ms;
+            int up;
+            index_t idx = T_producer[i].idx;
+            auto pp = cpn->findP_byindex(idx);
+            cpn->CT2MS(T_producer[i].arc_exp, ms, pp->gettid(), pp->getsid());
+            if (ms.getcolorcount() > 0) {
+                auto mapTokens = ms.getmapTokens();
+                for (auto j = mapTokens.begin(); j != mapTokens.end(); j++) {
+                    int count =j->second;
+                    for(auto k=cut_cur->b_idx_vec.begin();k!=cut_cur->b_idx_vec.end();k++){
+                        if(unfpdn->place[*k].cpn_index==idx){
+                            Bucket bkt1,bkt2;
+                            j->first->getcolor(bkt1);
+                            unfpdn->place[*k].token_record.getonlytoken()->getcolor(bkt2);
+                            if(bkt1==bkt2){
+                                x_set.push_back(*k);
+                                count--;
+                                if(count<1)
+                                    break;
+                            }
+                        }
+                    }
+                }
+            }else{
+                auto mapTokens = ms.getmapTokens();
+                for (auto j = mapTokens.begin(); j != mapTokens.end(); j++) {
+                    int count =j->second;
+                    for(auto k=cut_cur->b_idx_vec.begin();k!=cut_cur->b_idx_vec.end();k++){
+                        if(unfpdn->place[*k].cpn_index==idx){
+                            Bucket bkt1,bkt2;
+                            j->first->getcolor(bkt1);
+                            unfpdn->place[*k].token_record.getonlytoken()->getcolor(bkt2);
+                            if(bkt1==bkt2){
+                                x_set.push_back(*k);
+                                count--;
+                                if(count<1)
+                                    break;
+                            }
+                        }
+                    }
                 }
             }
         }
-        //    3.2- 事件e建立前后弧连接。每个绑定元素必须满足G（t），并且每个事件e的前集必须是co-set，否则不应生成e。
-        //    4- 返回第1步。
 
-        //产生pe
-        for (auto i = 0; i < unfpdn->bindings.size(); i++) {
-            PE *tmp_pe = new PE;
-            tmp_pe->xs = new X;
-            tmp_pe->t_idx = t_idx;
-            tmp_pe->bindings = unfpdn->bindings[i];
-            tmp_pe->xs->b_idx_vec = x_set;
-            tmp_pe->cut = cut;
-            if (is_in_pe(tmp_pe, unfpdn->pe)) {
-                cout << t_idx << "is in pe" << endl;
-                continue;
-            }
-            //        if(is_cut_off(cut,unfpdn))
-            //            continue;
-            cout << "find new pe t_idx=" << t_idx << endl;
-            unfpdn->pe.push_back(tmp_pe);
+        PE *tmp_pe = new PE;
+        tmp_pe->xs = new X;
+        tmp_pe->t_idx = t_idx;
+        tmp_pe->bindings = unfpdn->bindings[ibinding];
+        tmp_pe->xs->b_idx_vec = x_set;
+        tmp_pe->cut = cut_cur;
+        if (is_in_pe(tmp_pe, unfpdn->pe)) {
+            cout << t_idx << "is in pe" << endl;
+            continue;
         }
+        if (!is_mino) {
+            bool cur_e = 0;//判断至少有库所来自新产生的事件
+            for (auto j = x_set.begin(); j != x_set.end(); j++) {
+                if (!unfpdn->place[*j].producer.empty()) {
+                    if (unfpdn->place[*j].producer[0].idx == unfpdn->transitioncount)
+                        cur_e = 1;
+                }
+            }
+            if (!cur_e)
+                continue;
+        }
+        //        if(is_cut_off(cut,unfpdn))
+        //            continue;
+        cout << "find new pe t_idx=" << t_idx << endl;
+        unfpdn->pe.push_back(tmp_pe);
+        //}
     }
 }
 
@@ -1128,12 +1200,6 @@ bool get_full_config(int e_idx, UNFPDN *unfpdn, CPN *cpn) {
 
     bool changed = 0;//配置集是否有新成员
 
-    //debug+
-    for (auto i = e_config_cut->b_idx_vec.begin(); i != e_config_cut->b_idx_vec.end(); i++) {
-        cout << unfpdn->place[*i].cpn_index << ",";
-    }
-    cout << endl;
-    //debug-
     //auto tmp_map=cpn->mapVariable;
     for (auto t_idx = 0; t_idx < cpn->get_transcount(); t_idx++) {
         //判断是否为可能扩展
@@ -1355,7 +1421,7 @@ void dfs(int d, int an, int sn, int nn, map<int, int> map_b, UNFPDN *unfpdn) {
         }
         if (has_e)
             unfpdn->transition[unfpdn->transitioncount].configs.push_back(e_config);
-        cout << endl;
+        //cout << endl;
     }
     int u = some[d][0];  //选取Pivot结点
     for (int i = 0; i < sn; ++i) {
@@ -1429,14 +1495,16 @@ void UNFPDN::print_UNF(string filename, CPN *cpn) {
 
     for (int i = 0; i < placecount; i++) {
         if (cpn->findP_byindex(place[i].cpn_index)->getiscontrolP() == false)
-            out << "subgraph cluster_" << place[i].id << "{" << "fontsize = " << to_string(font_size) << ";label=\"" <<
+            out << "subgraph cluster_" << place[i].id << "{" << "fontsize = " << to_string(font_size) << ";label=\""
+                <<
                 cpn->findP_byindex(place[i].cpn_index)->getExp() << ";"
                 << cpn->findP_byindex(place[i].cpn_index)->getid() << "\";color=\"white\"" << place[i].id <<
                 "[shape=circle" << ",fontsize = " << to_string(font_size) << ",width=" << to_string(P_width)
                 << ",style=\"filled\",color=\"black\",fillcolor=\"" << fillcolor << "\"]}" << endl;
         else {
             //            out << place[i].id << "[shape=circle," << "label=\"" << place[i].expression << "\"]" << endl;
-            out << "subgraph cluster_" << place[i].id << "{" << "fontsize = " << to_string(font_size) << ";label=\"" <<
+            out << "subgraph cluster_" << place[i].id << "{" << "fontsize = " << to_string(font_size) << ";label=\""
+                <<
                 cpn->findP_byindex(place[i].cpn_index)->getExp() << ";"
                 << cpn->findP_byindex(place[i].cpn_index)->getid() << "\";color=\"white\"" << place[i].id <<
                 "[shape=circle" << ",fontsize = " << to_string(font_size) << ",width=" << to_string(P_width)
@@ -1447,7 +1515,8 @@ void UNFPDN::print_UNF(string filename, CPN *cpn) {
     //out << "Transition:" << endl;
     //out << "-----------------------------------" << endl;
     for (int i = 0; i < transitioncount; i++) {
-        out << "subgraph cluster_" << transition[i].id << "{" << "fontsize = " << to_string(font_size) << ";label=\"" <<
+        out << "subgraph cluster_" << transition[i].id << "{" << "fontsize = " << to_string(font_size)
+            << ";label=\"" <<
             cpn->findT_byindex(transition[i].cpn_index)->getid() << "\";color=\"white\"" << transition[i].id <<
             "[shape=box" << ",fontsize = " << to_string(font_size) << ",width=" << to_string(T_width) << ",height="
             << to_string(T_height) << "]}" << endl;
@@ -1502,18 +1571,20 @@ void UNFOLD::init() {
         tmp_token_map = tmp_multiset.getmapTokens();
         auto tmp_token = tmp_token_map.begin();
         while (tmp_token != tmp_token_map.end()) {
-            //            Bucket tmp_bucket;
-            unfpdn->place[unfpdn->placecount].id = "B" + to_string(unfpdn->placecount);
-            unfpdn->place[unfpdn->placecount].cpn_index = i;
-            //            tmp_token->first->getcolor(tmp_bucket);
-            unfpdn->place[unfpdn->placecount].token_record.generateFromToken(tmp_token->first);
-            unfpdn->place[unfpdn->placecount].initMarking.generateFromToken(tmp_token->first);//保存token的值
-            //            unfpdn->place[unfpdn->placecount].token_count = 0;//初始b清空标记
-            unfpdn->map_Plc_cpn2unf.insert(
-                    make_pair(i, unfpdn->placecount));//映射（cpn->place的idx，unfpdn->place的下标）
-            unfpdn->min_o->b_idx_vec.push_back(unfpdn->placecount);
+            for (auto j = 0; j < tmp_token->second; j++) {
+                //            Bucket tmp_bucket;
+                unfpdn->place[unfpdn->placecount].id = "B" + to_string(unfpdn->placecount);
+                unfpdn->place[unfpdn->placecount].cpn_index = i;
+                //            tmp_token->first->getcolor(tmp_bucket);
+                unfpdn->place[unfpdn->placecount].token_record.generateFromToken(tmp_token->first);
+                unfpdn->place[unfpdn->placecount].initMarking.generateFromToken(tmp_token->first);//保存token的值
+                //            unfpdn->place[unfpdn->placecount].token_count = 0;//初始b清空标记
+                unfpdn->map_Plc_cpn2unf.insert(
+                        make_pair(i, unfpdn->placecount));//映射（cpn->place的idx，unfpdn->place的下标）
+                unfpdn->min_o->b_idx_vec.push_back(unfpdn->placecount);
 
-            unfpdn->placecount++;//unf->place[i]从0开始保存；
+                unfpdn->placecount++;//unf->place[i]从0开始保存；
+            }
             tmp_token++;
         }
         for (auto j = unfpdn->map_Plc_cpn2unf.lower_bound(i); j != unfpdn->map_Plc_cpn2unf.upper_bound(i); j++) {
@@ -1547,7 +1618,7 @@ void UNFOLD::init() {
     //    CTransition *tmp_t_cpn;
     //    UTransition *tmp_t;
     for (int i = 0; i < cpn->get_transcount(); i++) {
-        find_new_pe_by_t(i, unfpdn->min_o);
+        find_new_pe_by_t(i, unfpdn->min_o, 1);
 
         //    3.2- 事件e建立前后弧连接。每个绑定元素必须满足G（t），并且每个事件e的前集必须是co-set，否则不应生成e。
         //    4- 返回第1步。
@@ -1654,148 +1725,117 @@ void UNFOLD::fire() {
 
         cpn->CT2MS(T_consumer[j].arc_exp, ms, pp->gettid(), pp->getsid());
         //CT2MS may have 0 count token
-        ms.merge();
+        //ms.merge();
         //产生输出库所（条件）
 
-        if (ms.getcolorcount() > 1) {
+        //if (ms.getcolorcount() >= 0) {
             auto mapTokens = ms.getmapTokens();
             for (auto k = mapTokens.begin(); k != mapTokens.end(); k++) {
-                unfpdn->place[unfpdn->placecount].id = "B" + to_string(unfpdn->placecount);
-                unfpdn->place[unfpdn->placecount].cpn_index = T_consumer[j].idx;
-                unfpdn->place[unfpdn->placecount].token_record.generateFromToken((*k).first);
-                unfpdn->place[unfpdn->placecount].token_record.setTokenCount((*k).second);
+                int count =k->second;
+                while(count) {
+                    unfpdn->place[unfpdn->placecount].id = "B" + to_string(unfpdn->placecount);
+                    unfpdn->place[unfpdn->placecount].cpn_index = T_consumer[j].idx;
+                    unfpdn->place[unfpdn->placecount].token_record.generateFromToken(k->first);
+                    //unfpdn->place[unfpdn->placecount].token_record.setTokenCount((*k).second);
 
-                unfpdn->map_Plc_cpn2unf.insert(
-                        make_pair(idx, unfpdn->placecount));//映射（cpn->place的idx，unfpdn->place的下标）
+                    unfpdn->map_Plc_cpn2unf.insert(
+                            make_pair(idx, unfpdn->placecount));//映射（cpn->place的idx，unfpdn->place的下标）
 
-                //产生后弧
-                USArc usarc;
-                usarc.idx = unfpdn->placecount;
-                unf_t->consumer.push_back(usarc);
+                    //产生后弧
+                    USArc usarc;
+                    usarc.idx = unfpdn->placecount;
+                    unf_t->consumer.push_back(usarc);
 
-                //建立前弧
-                usarc.idx = unfpdn->transitioncount;
-                unfpdn->place[unfpdn->placecount].producer.push_back(usarc);
+                    //建立前弧
+                    usarc.idx = unfpdn->transitioncount;
+                    unfpdn->place[unfpdn->placecount].producer.push_back(usarc);
 
-                //建弧
-                auto arc = &unfpdn->arc[unfpdn->arccount];
-                arc->source_id = unf_t->id;
-                arc->target_id = unfpdn->place[unfpdn->placecount].id;
-                unfpdn->arccount++;
+                    //建弧
+                    auto arc = &unfpdn->arc[unfpdn->arccount];
+                    arc->source_id = unf_t->id;
+                    arc->target_id = unfpdn->place[unfpdn->placecount].id;
+                    unfpdn->arccount++;
 
-                //concurrency matrix
-                vector<int> con_newb;
-                for (auto col = 0; col < unfpdn->matrix_Cob.size(); col++) {
-                    bool result = 1;
-                    for (auto row = x->b_idx_vec.begin(); row != x->b_idx_vec.end(); row++) {
-                        result = result && unfpdn->matrix_Cob[*row][col];
+                    //concurrency matrix
+                    vector<int> con_newb;
+                    for (auto col = 0; col < unfpdn->matrix_Cob.size(); col++) {
+                        bool result = 1;
+                        for (auto row = x->b_idx_vec.begin(); row != x->b_idx_vec.end(); row++) {
+                            result = result && unfpdn->matrix_Cob[*row][col];
+                        }
+                        if (!unfpdn->place[col].producer.empty()) {
+                            if (unfpdn->place[col].producer[0].idx == unfpdn->transitioncount)
+                                result = 1;
+                        }
+                        unfpdn->matrix_Cob[col].push_back(result);
+                        con_newb.push_back(result);
                     }
-                    if (!unfpdn->place[col].producer.empty()) {
-                        if (unfpdn->place[col].producer[0].idx == unfpdn->transitioncount)
-                            result = 1;
-                    }
-                    unfpdn->matrix_Cob[col].push_back(result);
-                    con_newb.push_back(result);
+                    con_newb.push_back(0);
+                    unfpdn->matrix_Cob.push_back(con_newb);
+
+                    unfpdn->placecount++;//unf->place[i]从0开始保存；
+                    count--;
+                    if (count < 1)
+                        break;
                 }
-                con_newb.push_back(0);
-                unfpdn->matrix_Cob.push_back(con_newb);
-
-                unfpdn->placecount++;//unf->place[i]从0开始保存；
             }
-            continue;
-        }
-
-        unfpdn->place[unfpdn->placecount].id = "B" + to_string(unfpdn->placecount);
-        unfpdn->place[unfpdn->placecount].cpn_index = T_consumer[j].idx;
-        if (ms.getcolorcount() == 1) {
-            unfpdn->place[unfpdn->placecount].token_record = ms;
-        } else {
-            int b_idx;
-            auto E_producer = unf_t->producer;
-            for (auto k = E_producer.begin(); k != E_producer.end(); k++) {
-                if (unfpdn->place[k->idx].cpn_index == idx)
-                    b_idx = k->idx;
-            }
-            unfpdn->place[unfpdn->placecount].token_record.generateFromToken(
-                    unfpdn->place[b_idx].token_record.getonlytoken());
-        }
-        unfpdn->map_Plc_cpn2unf.insert(
-                make_pair(idx, unfpdn->placecount));//映射（cpn->place的idx，unfpdn->place的下标）
-
-        //产生后弧
-        USArc usarc;
-        usarc.idx = unfpdn->placecount;
-        unf_t->consumer.push_back(usarc);
-
-        //建立前弧
-        usarc.idx = unfpdn->transitioncount;
-        unfpdn->place[unfpdn->placecount].producer.push_back(usarc);
-
-        //建弧
-        auto arc = &unfpdn->arc[unfpdn->arccount];
-        arc->source_id = unf_t->id;
-        arc->target_id = unfpdn->place[unfpdn->placecount].id;
-        unfpdn->arccount++;
-
-        //concurrency matrix
-        vector<int> con_newb;
-        for (auto col = 0; col < unfpdn->matrix_Cob.size(); col++) {
-            bool result = 1;
-            for (auto row = x->b_idx_vec.begin(); row != x->b_idx_vec.end(); row++) {
-                result = result && unfpdn->matrix_Cob[*row][col];
-            }
-            if (!unfpdn->place[col].producer.empty()) {
-                if (unfpdn->place[col].producer[0].idx == unfpdn->transitioncount)
-                    result = 1;
-            }
-            unfpdn->matrix_Cob[col].push_back(result);
-            con_newb.push_back(result);
-        }
-        con_newb.push_back(0);
-        unfpdn->matrix_Cob.push_back(con_newb);
-
-        unfpdn->placecount++;//unf->place[i]从0开始保存；
+        //}
+//        else {
+//            unfpdn->place[unfpdn->placecount].id = "B" + to_string(unfpdn->placecount);
+//            unfpdn->place[unfpdn->placecount].cpn_index = T_consumer[j].idx;
+//            int b_idx;
+//            auto E_producer = unf_t->producer;
+//            auto k = E_producer.begin();
+//            for (; k != E_producer.end(); k++) {
+//                if (unfpdn->place[k->idx].cpn_index == idx) {
+//                    b_idx = k->idx;
+//                    break;
+//                }
+//            }
+//            if (k == E_producer.end())
+//                throw "ERROR!can't find place in produce matching consumer!";
+//            unfpdn->place[unfpdn->placecount].token_record.generateFromToken(
+//                    unfpdn->place[b_idx].token_record.getonlytoken());
+//
+//            unfpdn->map_Plc_cpn2unf.insert(
+//                    make_pair(idx, unfpdn->placecount));//映射（cpn->place的idx，unfpdn->place的下标）
+//
+//            //产生后弧
+//            USArc usarc;
+//            usarc.idx = unfpdn->placecount;
+//            unf_t->consumer.push_back(usarc);
+//
+//            //建立前弧
+//            usarc.idx = unfpdn->transitioncount;
+//            unfpdn->place[unfpdn->placecount].producer.push_back(usarc);
+//
+//            //建弧
+//            auto arc = &unfpdn->arc[unfpdn->arccount];
+//            arc->source_id = unf_t->id;
+//            arc->target_id = unfpdn->place[unfpdn->placecount].id;
+//            unfpdn->arccount++;
+//
+//            //concurrency matrix
+//            vector<int> con_newb;
+//            for (auto col = 0; col < unfpdn->matrix_Cob.size(); col++) {
+//                bool result = 1;
+//                for (auto row = x->b_idx_vec.begin(); row != x->b_idx_vec.end(); row++) {
+//                    result = result && unfpdn->matrix_Cob[*row][col];
+//                }
+//                if (!unfpdn->place[col].producer.empty()) {
+//                    if (unfpdn->place[col].producer[0].idx == unfpdn->transitioncount)
+//                        result = 1;
+//                }
+//                unfpdn->matrix_Cob[col].push_back(result);
+//                con_newb.push_back(result);
+//            }
+//            con_newb.push_back(0);
+//            unfpdn->matrix_Cob.push_back(con_newb);
+//
+//            unfpdn->placecount++;//unf->place[i]从0开始保存；
+//        }
     }
     //建立前后弧完毕
-    CUT *cut = get_cut(unfpdn->transitioncount, unfpdn, cpn);
-    unf_t->cut = cut;
-    int cutoff_e_idx;
-    //if(unfpdn->posCutoff.count(pe->t_idx)) {
-        if (is_cut_off(cut, unfpdn, cutoff_e_idx)) {
-
-            cout << "t" << pe->t_idx << " rollback" << endl;
-            auto unf_t_pro = unf_t->producer;
-            for (auto j = 0; j < unf_t_pro.size(); j++) {
-                auto b = &unfpdn->place[unf_t_pro[j].idx];
-                b->consumer.pop_back();
-            }
-            auto unf_t_con = unf_t->consumer;
-            for (auto j = 0; j < unf_t_con.size(); j++) {
-                auto b = &unfpdn->place[unf_t_con[j].idx];
-                b->token_record.clear();
-                b->producer.clear();
-                for (auto imap = unfpdn->map_Plc_cpn2unf.lower_bound(b->cpn_index);
-                     imap != unfpdn->map_Plc_cpn2unf.upper_bound(b->cpn_index); imap++) {
-                    if (imap->second == unf_t_con[j].idx)
-                        unfpdn->map_Plc_cpn2unf.erase(imap);
-                }
-                //concurrency matrix rollback
-                for (auto icob = 0; icob < unfpdn->matrix_Cob.size(); icob++) {
-                    unfpdn->matrix_Cob[icob].pop_back();
-                }
-                unfpdn->matrix_Cob.pop_back();
-            }
-            unf_t->producer.clear();
-            unf_t->consumer.clear();
-            unf_t->cut->b_idx_vec.clear();
-            unfpdn->placecount = tmp_placecount;
-            //if (i == b_idx_bindings.size() - 1)
-            unfpdn->pe.erase(pos);
-            unfpdn->arccount = tmp_arccount;
-            unfpdn->cutoff_t.insert(pe->t_idx);
-            return;
-        }
-    //}
     //configuration matrices+
     set<int> prep_set;
     for (auto i = 0; i < x->b_idx_vec.size(); i++) {
@@ -1817,13 +1857,18 @@ void UNFOLD::fire() {
     } else {
         for (auto col = 0; col < unfpdn->matrix_Conf.size(); col++) {
             new_conf.push_back(0);
+            unfpdn->matrix_Conf[col].push_back(0);
         }
         new_conf.push_back(1);
         unfpdn->matrix_Conf.push_back(new_conf);
     }
 
     //configuration matrices-
-    //·[e]、[e]·、cut([e])
+    CUT *cut = new CUT;
+    cut->e_idx = unfpdn->transitioncount;
+//    unf_t->cut = cut;
+
+//·[e]、[e]·、cut([e])
     if (prep_set.size() == 0) {
         set<int> tmp_cut, tmp_pre, tmp_con;
         tmp_cut.insert(unfpdn->min_o->b_idx_vec.begin(), unfpdn->min_o->b_idx_vec.end());
@@ -1839,6 +1884,7 @@ void UNFOLD::fire() {
         unfpdn->table_conf_cut.push_back(tmp_cut);
         unfpdn->table_conf_pre.push_back(tmp_pre);
         unfpdn->table_conf_con.push_back(tmp_con);
+        cut->b_idx_vec.insert(cut->b_idx_vec.end(), tmp_cut.begin(), tmp_cut.end());
     } else if (prep_set.size() == 1) {
         set<int> tmp_cut, tmp_pre, tmp_con;
         tmp_cut.insert(unfpdn->table_conf_cut[*prep_set.begin()].begin(),
@@ -1859,6 +1905,7 @@ void UNFOLD::fire() {
         unfpdn->table_conf_cut.push_back(tmp_cut);
         unfpdn->table_conf_pre.push_back(tmp_pre);
         unfpdn->table_conf_con.push_back(tmp_con);
+        cut->b_idx_vec.insert(cut->b_idx_vec.end(), tmp_cut.begin(), tmp_cut.end());
     } else {
         set<int> tmp_cut, tmp_pre, tmp_con;
         tmp_cut.insert(unfpdn->min_o->b_idx_vec.begin(), unfpdn->min_o->b_idx_vec.end());
@@ -1889,24 +1936,76 @@ void UNFOLD::fire() {
         unfpdn->table_conf_cut.push_back(tmp_cut);
         unfpdn->table_conf_pre.push_back(tmp_pre);
         unfpdn->table_conf_con.push_back(tmp_con);
+        cut->b_idx_vec.insert(cut->b_idx_vec.end(), tmp_cut.begin(), tmp_cut.end());
     }
 
-    get_divide_config(unfpdn);
-    //while (get_full_config(unfpdn->transitioncount, unfpdn, cpn));//通过e的可能扩展查找与e并发的事件
-    //if(unf_t->configs.size()==0){
-    //Config *e_config = new Config;
-    //e_config->config.push_back(unfpdn->transitioncount);
-    //unfpdn->transition[unfpdn->transitioncount].configs.push_back(e_config);
-    //}
-    //CUT *config_cut = get_cut_of_config(unfpdn->transition[unfpdn->transitioncount].configs.front(), unfpdn, cpn);
+    int cutoff_e_idx;
+    //if(unfpdn->posCutoff.count(pe->t_idx)) {
+    if (is_cut_off(cut, unfpdn, cutoff_e_idx)) {
 
-    for (int i0 = 0; i0 < unf_t->configs.size(); i0++) {
-        CUT *config_cut = get_cut_of_config(unfpdn->transition[unfpdn->transitioncount].configs[i0], unfpdn, cpn);
-        for (int j = 0; j < cpn->get_transcount(); j++) {
-            find_new_pe_by_t(j, config_cut);
+        cout << "t" << pe->t_idx << " is cutoff" << endl;
+        /*
+        auto unf_t_pro = unf_t->producer;
+        for (auto j = 0; j < unf_t_pro.size(); j++) {
+            auto b = &unfpdn->place[unf_t_pro[j].idx];
+            b->consumer.pop_back();
         }
+        auto unf_t_con = unf_t->consumer;
+        for (auto j = 0; j < unf_t_con.size(); j++) {
+            auto b = &unfpdn->place[unf_t_con[j].idx];
+            b->token_record.clear();
+            b->producer.clear();
+            for (auto imap = unfpdn->map_Plc_cpn2unf.lower_bound(b->cpn_index);
+                 imap != unfpdn->map_Plc_cpn2unf.upper_bound(b->cpn_index); imap++) {
+                if (imap->second == unf_t_con[j].idx)
+                    unfpdn->map_Plc_cpn2unf.erase(imap);
+            }
+            //concurrency matrix rollback
+            for (auto icob = 0; icob < unfpdn->matrix_Cob.size()-1; icob++) {
+                unfpdn->matrix_Cob[icob].pop_back();
+            }
+            unfpdn->matrix_Cob.pop_back();
+            //configuration matrices rollback
+            for (auto iconf = 0; iconf < unfpdn->matrix_Cob.size()-1; iconf++) {
+                unfpdn->matrix_Conf[iconf].pop_back();
+            }
+            unfpdn->matrix_Conf.pop_back();
+        }
+        unf_t->producer.clear();
+        unf_t->consumer.clear();
+        //unf_t->cut->b_idx_vec.clear();
+        unfpdn->placecount = tmp_placecount;
+        //if (i == b_idx_bindings.size() - 1)
+        unfpdn->pe.erase(pos);
+        unfpdn->arccount = tmp_arccount;
+        unfpdn->cutoff_t.insert(pe->t_idx);
+
+        unfpdn->table_conf_cut.pop_back();
+        unfpdn->table_conf_pre.pop_back();
+        unfpdn->table_conf_con.pop_back();
+        return;
+         */
     }
-    unfpdn->cut_off.push_back(cut);
+        //}
+    else {
+        get_divide_config(unfpdn);
+        //while (get_full_config(unfpdn->transitioncount, unfpdn, cpn));//通过e的可能扩展查找与e并发的事件
+        //if(unf_t->configs.size()==0){
+        //Config *e_config = new Config;
+        //e_config->config.push_back(unfpdn->transitioncount);
+        //unfpdn->transition[unfpdn->transitioncount].configs.push_back(e_config);
+        //}
+        //CUT *config_cut = get_cut_of_config(unfpdn->transition[unfpdn->transitioncount].configs.front(), unfpdn, cpn);
+
+        for (int i0 = 0; i0 < unf_t->configs.size(); i0++) {
+            CUT *config_cut = get_cut_of_config(unfpdn->transition[unfpdn->transitioncount].configs[i0], unfpdn,
+                                                cpn);
+            for (int j = 0; j < cpn->get_transcount(); j++) {
+                find_new_pe_by_t(j, config_cut);
+            }
+        }
+        unfpdn->cut_off.push_back(cut);
+    }
     unfpdn->transitioncount++;
     //}
     unfpdn->pe.erase(unfpdn->pe.begin());
@@ -1916,7 +2015,7 @@ void UNFOLD::unfolding() {
     init();
     int times = 0;
     while (!unfpdn->pe.empty()) {
-        if (times == 10) {
+        if (times == 6) {
             cout << endl;
             times = 0;
         }
@@ -1933,9 +2032,9 @@ void UNFOLD::unfolding() {
 //            cout << endl;
 //        }
         cout << endl;
-        //unfpdn->print_UNF("unfold",cpn);
+        //unfpdn->print_UNF("unfold", cpn);
     }
-    unfpdn->print_UNF("unfold", cpn);
+    //unfpdn->print_UNF("unfold", cpn);
     cout << endl << "unf_placecount:" << unfpdn->placecount << endl;
     cout << "unf_transitioncount:" << unfpdn->transitioncount << endl;
 }

@@ -14,6 +14,7 @@ using namespace std;
 extern int string_replace(std::string &s1, const std::string &s2, const std::string &s3);
 extern void readGraph(std::string input, std::string output);
 extern void makeGraph(std::string inputname, std::string outputname);
+extern vector<string> split(const string &s, const string &seperator);
 
 extern vector<string> pthread_type;
 extern vector<string> pthread_func_type;
@@ -89,5 +90,7 @@ bool booloperate(T s1,T s2,string Operator) {
 extern bool booloperate(string s1,string s2,string Operator);
 
 extern void Bubble_sort(vector<string> &change_P);
+
+extern bool endswith(const std::string& str, const std::string& end);
 
 #endif //PDNET_CHECKER_BASE_H

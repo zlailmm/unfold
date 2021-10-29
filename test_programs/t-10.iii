@@ -1,0 +1,67 @@
+void reach_error(){}
+void abort(){}
+
+
+
+
+
+
+
+extern void abort(void);
+void reach_error(){}
+void assume_abort_if_not(int cond) {
+  if(!cond) {abort();}
+}
+
+
+
+
+
+
+void assert(int cond){
+    if(!cond) {abort();}
+}
+
+
+
+
+
+
+
+int shared = 0;
+int judge = 0;
+
+void error(void)
+{
+   {reach_error();abort();}
+  return;
+}
+
+void *
+thread(void *arg)
+{
+ shared = shared + 1;
+}
+
+void *
+thread1(void *arg)
+{
+    if(shared > 3) error();
+}
+
+int main(void)
+{pthread_t t[10],t1;
+ 
+    {int i=0;
+while(i<10){
+     pthread_create(&t[i], 0, thread, 0);
+i++;}}
+    pthread_create(&t1, 0, thread1, 0);
+
+    {int i=0;
+while(i<10){
+     pthread_join(t[i], 0);
+i++;}}
+    pthread_join(t1, 0);
+    return 0;
+}

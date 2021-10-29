@@ -3590,3 +3590,2381 @@ formula:1
 current file: ../test/1tmp_test.i
 formula:1
 
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.831
+model_check: 14.941
+total time: 16.772
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.101
+model_check: 8.626
+total time: 10.558
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.831
+& 14.941
+& 16.772
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.101
+& 8.626
+& 10.558\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 2.094
+model_check: 32.107
+total time: 34.201
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.378
+model_check: 11.348
+total time: 13.820
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 2.094
+& 32.107
+& 34.201
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.378
+& 11.348
+& 13.820\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.493
+model_check: 25.110
+total time: 26.603
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.649
+model_check: 14.961
+total time: 17.103
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.493
+& 25.110
+& 26.603
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.649
+& 14.961
+& 17.103\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 2.588
+model_check: 15.933
+total time: 18.521
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.337
+model_check: 8.663
+total time: 11.588
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 2.588
+& 15.933
+& 18.521
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.337
+& 8.663
+& 11.588\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.150
+model_check: 14.356
+total time: 15.506
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.242
+model_check: 9.193
+total time: 10.585
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.150
+& 14.356
+& 15.506
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.242
+& 9.193
+& 10.585\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 2.015
+model_check: 23.328
+total time: 25.343
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.471
+model_check: 15.566
+total time: 18.052
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 2.015
+& 23.328
+& 25.343
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.471
+& 15.566
+& 18.052\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.259
+model_check: 19.744
+total time: 21.003
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.327
+model_check: 11.766
+total time: 13.352
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.259
+& 19.744
+& 21.003
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.327
+& 11.766
+& 13.352\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.085
+model_check: 13.542
+total time: 14.627
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.220
+model_check: 7.688
+total time: 8.993
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.085
+& 13.542
+& 14.627
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.220
+& 7.688
+& 8.993\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.155
+model_check: 14.307
+total time: 15.462
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.251
+model_check: 8.576
+total time: 9.982
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.155
+& 14.307
+& 15.462
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.251
+& 8.576
+& 9.982\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.893
+model_check: 18.703
+total time: 20.596
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.335
+model_check: 10.940
+total time: 13.168
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.893
+& 18.703
+& 20.596
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.335
+& 10.940
+& 13.168\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.333
+model_check: 17.686
+total time: 19.019
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.239
+model_check: 14.273
+total time: 15.845
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.333
+& 17.686
+& 19.019
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.239
+& 14.273
+& 15.845\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.118
+model_check: 22.492
+total time: 23.610
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.453
+model_check: 12.449
+total time: 14.020
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.118
+& 22.492
+& 23.610
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.453
+& 12.449
+& 14.020\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.073
+model_check: 21.589
+total time: 22.662
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.263
+model_check: 11.347
+total time: 12.683
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.073
+& 21.589
+& 22.662
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.263
+& 11.347
+& 12.683\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.104
+model_check: 23.224
+total time: 24.328
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.334
+model_check: 11.828
+total time: 13.266
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.104
+& 23.224
+& 24.328
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.334
+& 11.828
+& 13.266\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.210
+model_check: 23.083
+total time: 24.293
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.247
+model_check: 9.343
+total time: 10.800
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.210
+& 23.083
+& 24.293
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.247
+& 9.343
+& 10.800\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.232
+model_check: 20.076
+total time: 21.308
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.273
+model_check: 8.738
+total time: 10.243
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.232
+& 20.076
+& 21.308
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.273
+& 8.738
+& 10.243\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.123
+model_check: 20.509
+total time: 21.632
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.301
+model_check: 10.255
+total time: 11.679
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.123
+& 20.509
+& 21.632
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.301
+& 10.255
+& 11.679\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.551
+model_check: 17.876
+total time: 19.427
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.206
+model_check: 7.482
+total time: 9.239
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.551
+& 17.876
+& 19.427
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.206
+& 7.482
+& 9.239\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.151
+model_check: 18.566
+total time: 19.717
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.203
+model_check: 7.794
+total time: 9.148
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.151
+& 18.566
+& 19.717
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.203
+& 7.794
+& 9.148\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.739
+model_check: 20.922
+total time: 22.661
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.254
+model_check: 9.270
+total time: 11.263
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.739
+& 20.922
+& 22.661
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.254
+& 9.270
+& 11.263\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.241
+model_check: 16.660
+total time: 17.901
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.202
+model_check: 7.171
+total time: 8.614
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.241
+& 16.660
+& 17.901
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.202
+& 7.171
+& 8.614\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.385
+model_check: 21.004
+total time: 22.389
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.249
+model_check: 9.315
+total time: 10.949
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.385
+& 21.004
+& 22.389
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.249
+& 9.315
+& 10.949\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 2.456
+model_check: 45.474
+total time: 47.930
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 1.009
+model_check: 25.079
+total time: 28.544
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 2.456
+& 45.474
+& 47.930
+& \emph{true}
+& 3
+& 2
+& 1
+& 1.009
+& 25.079
+& 28.544\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 3.205
+model_check: 34.270
+total time: 37.475
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.511
+model_check: 17.909
+total time: 21.625
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 3.205
+& 34.270
+& 37.475
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.511
+& 17.909
+& 21.625\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 2.045
+model_check: 27.045
+total time: 29.090
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.628
+model_check: 13.836
+total time: 16.509
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 2.045
+& 27.045
+& 29.090
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.628
+& 13.836
+& 16.509\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.472
+model_check: 30.444
+total time: 31.916
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.452
+model_check: 18.383
+total time: 20.307
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.472
+& 30.444
+& 31.916
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.452
+& 18.383
+& 20.307\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 2.824
+model_check: 25.641
+total time: 28.465
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.442
+model_check: 15.407
+total time: 18.673
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 2.824
+& 25.641
+& 28.465
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.442
+& 15.407
+& 18.673\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.480
+model_check: 31.581
+total time: 33.061
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.396
+model_check: 15.516
+total time: 17.392
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.480
+& 31.581
+& 33.061
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.396
+& 15.516
+& 17.392\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.956
+model_check: 42.291
+total time: 44.247
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.559
+model_check: 18.043
+total time: 20.558
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.956
+& 42.291
+& 44.247
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.559
+& 18.043
+& 20.558\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.993
+model_check: 29.541
+total time: 31.534
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.277
+model_check: 11.807
+total time: 14.077
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.993
+& 29.541
+& 31.534
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.277
+& 11.807
+& 14.077\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 1.622
+model_check: 27.568
+total time: 29.190
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.288
+model_check: 16.688
+total time: 18.598
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 1.622
+& 27.568
+& 29.190
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.288
+& 16.688
+& 18.598\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 7.608
+model_check: 187.614
+total time: 195.222
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.459
+model_check: 16.553
+total time: 24.620
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 7.608
+& 187.614
+& 195.222
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.459
+& 16.553
+& 24.620\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 6.497
+model_check: 151.367
+total time: 157.864
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.456
+model_check: 18.735
+total time: 25.688
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 6.497
+& 151.367
+& 157.864
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.456
+& 18.735
+& 25.688\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 5.244
+model_check: 53.792
+total time: 59.036
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.823
+model_check: 19.351
+total time: 25.418
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 5.244
+& 53.792
+& 59.036
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.823
+& 19.351
+& 25.418\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 4.105
+model_check: 70.438
+total time: 74.543
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.434
+model_check: 18.054
+total time: 22.593
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 4.105
+& 70.438
+& 74.543
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.434
+& 18.054
+& 22.593\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 4.325
+model_check: 64.895
+total time: 69.220
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.761
+model_check: 20.201
+total time: 25.287
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 4.325
+& 64.895
+& 69.220
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.761
+& 20.201
+& 25.287\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 3.564
+model_check: 54.096
+total time: 57.660
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.463
+model_check: 16.817
+total time: 20.844
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 3.564
+& 54.096
+& 57.660
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.463
+& 16.817
+& 20.844\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 3.043
+model_check: 73.319
+total time: 76.362
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.464
+model_check: 19.893
+total time: 23.400
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 3.043
+& 73.319
+& 76.362
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.464
+& 19.893
+& 23.400\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 4.452
+model_check: 55.337
+total time: 59.789
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.679
+model_check: 17.779
+total time: 22.910
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 4.452
+& 55.337
+& 59.789
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.679
+& 17.779
+& 22.910\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 2.519
+model_check: 37.957
+total time: 40.476
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.548
+model_check: 14.282
+total time: 17.349
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 2.519
+& 37.957
+& 40.476
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.548
+& 14.282
+& 17.349\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 3.605
+model_check: 50.256
+total time: 53.861
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.624
+model_check: 18.464
+total time: 22.693
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 3.605
+& 50.256
+& 53.861
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.624
+& 18.464
+& 22.693\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 3.906
+model_check: 48.689
+total time: 52.595
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.582
+model_check: 15.498
+total time: 19.986
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 3.906
+& 48.689
+& 52.595
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.582
+& 15.498
+& 19.986\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 3.964
+model_check: 45.458
+total time: 49.422
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.561
+model_check: 15.342
+total time: 19.867
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 3.964
+& 45.458
+& 49.422
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.561
+& 15.342
+& 19.867\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 2.603
+model_check: 55.609
+total time: 58.212
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.710
+model_check: 19.240
+total time: 22.553
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 2.603
+& 55.609
+& 58.212
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.710
+& 19.240
+& 22.553\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 2.654
+model_check: 47.992
+total time: 50.646
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.553
+model_check: 19.046
+total time: 22.253
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 2.654
+& 47.992
+& 50.646
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.553
+& 19.046
+& 22.253\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 4.479
+model_check: 52.645
+total time: 57.124
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.530
+model_check: 16.803
+total time: 21.812
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 4.479
+& 52.645
+& 57.124
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.530
+& 16.803
+& 21.812\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/1tmp_test.iii
+formula:1
+
+direct build time: 3.633
+model_check: 66.921
+total time: 70.554
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 0.537
+model_check: 14.158
+total time: 18.328
+
+& \emph{true}
+& 37
+& 15
+& 23
+& 3.633
+& 66.921
+& 70.554
+& \emph{true}
+& 3
+& 2
+& 1
+& 0.537
+& 14.158
+& 18.328\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{2}$,$P_{4}$,$P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{11}$,$P_{12}$,$P_{13}$,$P_{14}$,$P_{15}$,$P_{16}$,$P_{17}$,$P_{18}$,$P_{19}$,$P_{20}$,$P_{21}$,$P_{22}$,$P_{23}$,$P_{24}$,$P_{25}$,$P_{26}$,$P_{27}$,$P_{28}$,$P_{29}$,$P_{30}$,$P_{31}$,$P_{32}$,$P_{33}$,$P_{34}$,$P_{35}$,$P_{36}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{5}$,$T_{6}$,$T_{7}$,$T_{8}$,$T_{9}$,$T_{10}$,$T_{11}$,$T_{12}$,$T_{13}$,$T_{14}$,
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+direct build time: 12.141
+model_check: 52.596
+total time: 64.737
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 7.845
+model_check: 36.540
+total time: 56.526
+
+& \emph{false}
+& 64
+& 32
+& 23
+& 12.141
+& 52.596
+& 64.737
+& \emph{false}
+& 40
+& 22
+& 20
+& 7.845
+& 36.540
+& 56.526\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{15}$,$P_{16}$,$P_{19}$,$P_{20}$,$P_{24}$,$P_{26}$,$P_{29}$,$P_{32}$,$P_{34}$,$P_{40}$,$P_{41}$,$P_{44}$,$P_{46}$,$P_{49}$,$P_{50}$,$P_{53}$,$P_{56}$,$P_{63}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{8}$,$T_{9}$,$T_{12}$,$T_{13}$,$T_{16}$,$T_{21}$,$T_{28}$,
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+direct build time: 13.904
+model_check: 48.701
+total time: 62.605
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 7.446
+model_check: 32.232
+total time: 53.582
+
+& \emph{false}
+& 64
+& 32
+& 23
+& 13.904
+& 48.701
+& 62.605
+& \emph{false}
+& 40
+& 22
+& 20
+& 7.446
+& 32.232
+& 53.582\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{15}$,$P_{16}$,$P_{19}$,$P_{20}$,$P_{24}$,$P_{26}$,$P_{29}$,$P_{32}$,$P_{34}$,$P_{40}$,$P_{41}$,$P_{44}$,$P_{46}$,$P_{49}$,$P_{50}$,$P_{53}$,$P_{56}$,$P_{63}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{8}$,$T_{9}$,$T_{12}$,$T_{13}$,$T_{16}$,$T_{21}$,$T_{28}$,
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+direct build time: 14.141
+model_check: 58.000
+total time: 72.141
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 3.832
+model_check: 23.448
+total time: 41.421
+
+& \emph{false}
+& 64
+& 32
+& 23
+& 14.141
+& 58.000
+& 72.141
+& \emph{false}
+& 40
+& 22
+& 20
+& 3.832
+& 23.448
+& 41.421\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{15}$,$P_{16}$,$P_{19}$,$P_{20}$,$P_{24}$,$P_{26}$,$P_{29}$,$P_{32}$,$P_{34}$,$P_{40}$,$P_{41}$,$P_{44}$,$P_{46}$,$P_{49}$,$P_{50}$,$P_{53}$,$P_{56}$,$P_{63}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{8}$,$T_{9}$,$T_{12}$,$T_{13}$,$T_{16}$,$T_{21}$,$T_{28}$,
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+direct build time: 7.504
+model_check: 59.163
+total time: 66.667
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 3.616
+model_check: 24.290
+total time: 35.410
+
+& \emph{false}
+& 64
+& 32
+& 23
+& 7.504
+& 59.163
+& 66.667
+& \emph{false}
+& 40
+& 22
+& 20
+& 3.616
+& 24.290
+& 35.410\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{15}$,$P_{16}$,$P_{19}$,$P_{20}$,$P_{24}$,$P_{26}$,$P_{29}$,$P_{32}$,$P_{34}$,$P_{40}$,$P_{41}$,$P_{44}$,$P_{46}$,$P_{49}$,$P_{50}$,$P_{53}$,$P_{56}$,$P_{63}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{8}$,$T_{9}$,$T_{12}$,$T_{13}$,$T_{16}$,$T_{21}$,$T_{28}$,
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+direct build time: 18.732
+model_check: 189.522
+total time: 208.254
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 3.975
+model_check: 23.915
+total time: 46.622
+
+& \emph{false}
+& 64
+& 32
+& 23
+& 18.732
+& 189.522
+& 208.254
+& \emph{false}
+& 40
+& 22
+& 20
+& 3.975
+& 23.915
+& 46.622\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{15}$,$P_{16}$,$P_{19}$,$P_{20}$,$P_{24}$,$P_{26}$,$P_{29}$,$P_{32}$,$P_{34}$,$P_{40}$,$P_{41}$,$P_{44}$,$P_{46}$,$P_{49}$,$P_{50}$,$P_{53}$,$P_{56}$,$P_{63}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{8}$,$T_{9}$,$T_{12}$,$T_{13}$,$T_{16}$,$T_{21}$,$T_{28}$,
+
+current file: ../test/bigshot_s.iii
+formula:1
+
+direct build time: 8.804
+model_check: 76.361
+total time: 85.165
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 4.145
+model_check: 26.973
+total time: 39.922
+
+& \emph{true}
+& 64
+& 32
+& 20
+& 8.804
+& 76.361
+& 85.165
+& \emph{true}
+& 40
+& 22
+& 15
+& 4.145
+& 26.973
+& 39.922\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{15}$,$P_{16}$,$P_{19}$,$P_{20}$,$P_{24}$,$P_{26}$,$P_{29}$,$P_{32}$,$P_{34}$,$P_{40}$,$P_{41}$,$P_{44}$,$P_{46}$,$P_{49}$,$P_{50}$,$P_{53}$,$P_{56}$,$P_{63}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{8}$,$T_{9}$,$T_{12}$,$T_{13}$,$T_{16}$,$T_{21}$,$T_{28}$,
+
+current file: ../test/bigshot_s2.iii
+formula:1
+
+direct build time: 8.116
+model_check: 68.639
+total time: 76.755
+
+G(!(is-fireable{T0,}))
+
+
+slice time: 3.581
+model_check: 28.418
+total time: 40.115
+
+& \emph{true}
+& 64
+& 32
+& 20
+& 8.116
+& 68.639
+& 76.755
+& \emph{true}
+& 40
+& 22
+& 15
+& 3.581
+& 28.418
+& 40.115\\ \cline{2-12}
+
+criteria P : P1,P3,
+
+deleted P : $P_{5}$,$P_{6}$,$P_{7}$,$P_{8}$,$P_{9}$,$P_{10}$,$P_{15}$,$P_{16}$,$P_{19}$,$P_{20}$,$P_{24}$,$P_{26}$,$P_{29}$,$P_{32}$,$P_{34}$,$P_{40}$,$P_{41}$,$P_{44}$,$P_{46}$,$P_{49}$,$P_{50}$,$P_{53}$,$P_{56}$,$P_{63}$,
+
+deleted T : $T_{2}$,$T_{3}$,$T_{4}$,$T_{8}$,$T_{9}$,$T_{12}$,$T_{13}$,$T_{16}$,$T_{21}$,$T_{28}$,
+
+current file: ../test/fib_bench-1.iii
+formula:1
+
+
+current file: ../test/lazy01.iii
+formula:1
+
+
+current file: ../test/lazy01.iii
+formula:1
+
+
+current file: ../test/lazy01.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/fib_bench-1.iii
+formula:1
+
+
+current file: ../test/triangular-1.iii
+formula:1
+
+
+current file: ../test/fib_bench-1.iii
+formula:1
+
+
+current file: ../test/fib_bench-1.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/bigshot_p.iii
+formula:1
+
+
+current file: ../test/fib_bench-1.iii
+formula:1
+
+
+current file: ../test/fib_bench-1.iii
+formula:1
+
+
+current file: ../test/fib_bench-1.iii
+formula:1
+
+
+current file: ../test/fib_bench-1.iii
+formula:1
+
+
+current file: ../test/fib_bench-1.iii
+formula:1
+

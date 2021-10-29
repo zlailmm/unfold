@@ -18,7 +18,7 @@ bool judge_read(Arc_Type arcType){
 }
 
 bool judge_write(Arc_Type arcType){
-    if(arcType == write || arcType == readwrite)
+    if(arcType == writeArc || arcType == readwrite)
         return true;
     return false;
 }
@@ -540,7 +540,7 @@ void post_process(CPN *cpn,CPN *cpn_slice,vector<string> transitions)
             else
                 trans_vec = find_previous_T(cpn_slice->getplacearr()[i].getid(),cpn,transitions,true);
             for(unsigned int j=0;j<trans_vec.size();j++) {
-                cpn_slice->Add_Arc(trans_vec[j]->getid(), cpn_slice->getplacearr()[i].getid(),controlflowArcExp(tid_str) , false, executed,normal);
+                cpn_slice->Add_Arc(trans_vec[j]->getid(), cpn_slice->getplacearr()[i].getid(),controlflowArcExp(tid_str) , false, executed,beoverrided);
                 //arccount INC auto
 
 

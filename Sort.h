@@ -74,7 +74,7 @@ private:
     SORTID psptr;
 
 public:
-    SortTable(){psptr = 0;}
+    SortTable(){psptr = 0;init_buildInSort();}
     //first string is the sortname,the second MSI is this sort's information;
     MSI find_typename(string Type_name){
         auto iter = mapSort.find(Type_name);
@@ -83,6 +83,16 @@ public:
         return iter->second;
     }
     const ProductSort& find_productsort(SORTID sid){return productsorts[sid];}
+    void init_buildInSort(){
+        MSI msi;
+        msi.sid = 0;
+        msi.tid = Integer;
+        mapSort.emplace("Integer",msi);
+        msi.tid = Real;
+        mapSort.emplace("Real",msi);
+        msi.tid = String;
+        mapSort.emplace("String",msi);
+    }
     void Add_productsort(string id,vector<string> _sortname,vector<MemberInfo> _memberinfo,vector<MSI> _msi,bool _hasindex,bool _hastid){
         productsorts.emplace_back(id,_sortname,_memberinfo,_msi,_hasindex,_hastid);
         MSI msi;

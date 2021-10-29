@@ -23,6 +23,7 @@
 #include <gperftools/tcmalloc.h>
 #include <gperftools/malloc_extension.h>
 #define H1FACTOR 13//hash offset
+#define NoneRow -1
 
 using namespace std;
 
@@ -32,7 +33,7 @@ typedef unsigned int NUM_t;
 typedef unsigned int ID_t;
 typedef string TID_t;
 
-enum Arc_Type{executed,control,call_enter,call_exit,data,write,readwrite,call_connect,allocwrite,remain};//data is equal to read
+enum Arc_Type{executed,control,call_enter,call_exit,data,writeArc,readwrite,call_connect,allocwrite,remain};//data is equal to read
 
 struct postinfo{
     SizeList sl;
@@ -87,6 +88,7 @@ private:
     string expression;//unique mark
     unsigned short distance;
 
+    unsigned short row;
     vector<CSArc>producer;
     vector<CSArc>consumer;
 
@@ -100,7 +102,7 @@ private:
     //***PDNet added end***/
 public:
     CPN_Place(type tid,SORTID sid):initMarking(tid,sid){expression="";control_P=is_executed=is_global=false;distance = static_cast<unsigned short>(-1);}
-    CPN_Place(){distance = static_cast<unsigned short>(-1);}
+    CPN_Place(){distance = static_cast<unsigned short>(-1);row=NoneRow;}
     void operator=(CPN_Place &plc){
         //copy except producer and consumer
         id = plc.id;
@@ -118,7 +120,7 @@ public:
 //        is_mutex = plc.is_mutex;
 //        is_cond = plc.is_cond;
     }
-    void Init_Place(string id,type tid,SORTID sid,string expression,bool iscontrolP,bool isglobal,bool isexecuted,CPN *cpn);
+    void Init_Place(string id,type tid,SORTID sid,string expression,bool iscontrolP,bool isglobal,bool isexecuted,CPN *cpn, unsigned short row);
     bool AddMultiSet(const MultiSet& ms){return initMarking.PLUS(ms);}
     bool SubMultiSet(const MultiSet& ms){ return initMarking.MINUS(ms);}
 
@@ -153,7 +155,7 @@ public:
     MultiSet& getMultiSet(){return initMarking;}
     void setDistance(unsigned short dist){distance = dist;}
     unsigned short getDistance(){return distance;}
-
+    unsigned short getRow(){return row;}
 
 //    void setflags(bool controlP,bool isglobal,bool isexecuted){control_P = controlP;is_global = isglobal;is_executed = isexecuted;}
 //    void printTokens(const string &s);
@@ -172,11 +174,13 @@ private:
     bool is_writepointer;
     vector<CSArc> producer;
     vector<CSArc> consumer;
+    unsigned short row;
 public:
     bool isabort;
-    CPN_Transition(){is_writepointer=false;hasguard=false;isabort=false;}
+
+    CPN_Transition(){is_writepointer=false;hasguard=false;isabort=false;row = NoneRow;}
     CPN_Transition(string _id,string guard_str){id = _id;is_writepointer=false;hasguard = true;guard.construct(guard_str);}
-    void Init_Transition(string _id,string guard_str){id = _id;if(guard_str!=""){hasguard = true;guard.construct(guard_str);}}
+    void Init_Transition(string _id,string guard_str, unsigned short _row){id = _id;row=_row;if(guard_str!=""){hasguard = true;guard.construct(guard_str);}}
 //    void operator=(CPN_Transition &trans){
 //        //copy except produce and consumer
 //        id = trans.id;
@@ -194,7 +198,7 @@ public:
     string getid(){return id;}
     bool get_hasguard(){return hasguard;}
     condition_tree& get_guard(){return guard;}
-
+    unsigned short getRow(){return row;}
 
     //***PDNet added start***/
 
@@ -252,6 +256,7 @@ public:
     bool getisp2t(){return isp2t;}
     void setdeleted(){deleted = true;}
     bool getdeleted(){return deleted;}
+
 //    MultiSet arc_MS;
 //    ~CPN_Arc() {
 //        arc_exp.destructor(arc_exp.root);
@@ -302,8 +307,7 @@ private:
 
     void Add_Place_MS(string id,const MultiSet &ms);
     void Sub_Place_MS(string id,const MultiSet &ms);
-    void Add_Place(string id,string Type_name, bool controlP,SizeList sl,string exp,bool isglobal,bool isexecuted);
-    void Add_Transition(string id,string guard,string exp);
+
 
     void Add_Arc_ifnotexist(string source,string target,string exp,bool sourceP,Arc_Type arcType);
     void Add_Variable(string id,type tid);
@@ -358,7 +362,8 @@ private:
             pp->Add_falseexit(falseexit_T[i]);
     }
     vector<string> get_enter_T(string P_id){auto pp = findP_byid(P_id); return pp->get_enter();}
-    vector<string> get_exit_T(string P_id){auto pp = findP_byid(P_id); return pp->get_exit();}
+    vector<string> get_exit_T(string P_id){auto pp = findP_byid(P_id);
+        return pp->get_exit();}
     vector<string> get_falseexit_T(string P_id){auto pp = findP_byid(P_id); return pp->get_falseexit();}
 
     void set_call_P(string P_id,const vector<string> &call_P){auto pp = findP_byid(P_id);for(int i=0;i<call_P.size();i++)pp->Add_call_P(call_P[i]);}
@@ -381,9 +386,11 @@ private:
     void iter_extra(string newP,string _P);
     void create_connect(string control_T, string expression, string base);
     void create_assignment(string control_T, string P_id,gtree *location, string expression);
-    void readOperation(string v_name,string base,string T_id,bool markedremain);
+//    void readOperation(string v_name,string base,string T_id,bool markedremain);
+    void readOperation(string v_name,string base,string T_id,bool markedremain, bool markedwrite, AddArcForm arcForm);
     void writeOperation(string T_id,gtree *pos,string content);
-    void writeOperation(string P_id,string T_id, string content);
+//    void writeOperation(string P_id,string T_id, string content);
+    void writeOperation(string P_id,string T_id, string content, string index_str, SizeList sl, string base);
     string generateToken(string v_name,string base,short index,string member,short memberindex,string content);
     string generateInitToken(string v_name, string base, short index,string addr, string content, string __tid);
     void writestrcpy(string T,string str,string addr);
@@ -452,9 +459,11 @@ public:
     map<string,index_t> mapTransition;
     map<string,VARID> mapVariable;
     vector<string> get_correspond_P(string P_id){auto pp = findP_byid(P_id);return pp->get_cor_P();}
+    void Add_Place(string id,string Type_name, bool controlP,SizeList sl,string exp,bool isglobal,bool isexecuted, unsigned short row);
+    void Add_Transition(string id,string guard,string exp, unsigned short row);
     void Add_Arc(string source,string target,string exp,bool sourceP,Arc_Type arcType,AddArcForm form);
     CPlace* findP_byid(string P_id){auto piter = mapPlace.find(P_id);if(piter == mapPlace.end()) throw "can't find P:" + P_id;return &place[piter->second];}
-
+    void insert_PDNet(ifstream &in, bool fromFile);
     CPN();
     ~CPN();
 
@@ -509,7 +518,7 @@ public:
         }
     }
     vector<short>& get_transPriNum(){return transPriNum;}
-
+    void getRowRelatedPT(unsigned short row, vector<string> &Ps, vector<string> &Ts);
 
 };
 

@@ -52,7 +52,7 @@ public:
     condition_tree_node* getroot() const{return root;}
     string getexp() const{return exp;}
     void construct(string s);
-    //condition_tree(string s){exp = s;root = construct(s);}
+//    condition_tree(string s){exp = s;root = construct(s);}
     ~condition_tree(){
         if(!isrefer)
             deconstruct();

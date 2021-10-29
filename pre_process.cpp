@@ -7,6 +7,7 @@
 #include<fstream>
 #include<regex>
 #include<string>
+#include"base.h"
 #define TYPE_NUM 11
 using namespace std;
 
@@ -16,10 +17,73 @@ int switchcount=0;
 //pre-process
 static string init_num = "0";
 
+typedef map<int,int> RowMap;
+
 extern int string_replace(string &s1, const string &s2, const string &s3);
 
-bool for_to_while(string s, string &oldtext, string &newtext)//true代表搜索到，false代表没搜索到，这里s不是引用
+int extractRowNum(const string s, int pos){
+    int tmp_pos = pos - 1;
+    int rowCount = 1;
+    while(tmp_pos>=0){
+        if(s[tmp_pos] == '\n')
+            rowCount++;
+        tmp_pos--;
+    }
+    return rowCount;
+}
+
+int getRowCount(const string& s){
+    int rowCount = 0;
+    for(int i=0;i<s.length();i++){
+        if(s[i] == '\n')
+            rowCount++;
+    }
+    return rowCount;
+}
+
+/// 行号映射的累乘
+/// \param map1 先发生的行号映射
+/// \param map2 后发生的行号映射
+void rowMapMultiple(RowMap &originRowMap, RowMap tmpRowMap){
+    auto iter = originRowMap.begin();
+    while(iter != originRowMap.end()){
+        auto iter1 = tmpRowMap.find(iter->second);
+        if(iter1 == tmpRowMap.end())
+            throw "error in rowMapMultiple";
+        iter->second = iter1->second;
+        iter++;
+    }
+}
+
+/// 在原始行号映射基础上施加一个偏移
+/// \param originMap 原始行号映射
+/// \param rowStart 开始变化的行号
+/// \param rowOffset 变化的偏移量
+
+void rowMapOffset(RowMap &originMap, int rowStart, int rowOffset){
+    RowMap rowMap;
+    int count = 1;
+    auto iter = originMap.begin();
+    while(iter != originMap.end()){
+        if(count < rowStart)
+            ;
+        else
+            iter->second += rowOffset;
+        iter++;
+        count++;
+    }
+}
+
+void initRowMap(RowMap &rowMap, int rowCount){
+    for(int i=1;i<=rowCount;i++){
+        rowMap.emplace(i,i);
+    }
+}
+
+bool for_to_while(string s, string &oldtext, string &newtext, RowMap &rowMap)//true代表搜索到，false代表没搜索到，rowMap代表行号映射
 {
+    int rowCount = getRowCount(s);
+    initRowMap(rowMap,rowCount);
     regex pattern("for *\\((.*?);(.*?);(.*)\\)");
     smatch result;
 
@@ -37,7 +101,18 @@ bool for_to_while(string s, string &oldtext, string &newtext)//true代表搜索�
     }
     else
         return false;
-    newtext = "{\n" + res1 + ';' + "\nwhile(" + res2 + ')';
+
+//    int tmp_pos = position;
+//    int forRow = 0;
+//    while(tmp_pos>=0){
+//        if(s[tmp_pos] == '\n')
+//            forRow++;
+//        tmp_pos--;
+//    }
+
+    int forRow = extractRowNum(s,position);
+
+    newtext = "{" + res1 + ';' + "\nwhile(" + res2 + ')';
     for (unsigned int i = position + length; i < s.length(); i++)
     {
         if (s[i] == '{')
@@ -57,28 +132,39 @@ bool for_to_while(string s, string &oldtext, string &newtext)//true代表搜索�
         text = text + s[i];
         sum++;
     }
+    int afterContentRow = extractRowNum(s,position+length+sum) + 1;
     //cout << text << endl;
     //cout << sum;
-    text = "{" + text + res3 + ";}\n}";
+    text = "{" + text + "\n" + res3 + ";}}";
     newtext = newtext + text;
     oldtext = s.substr(position, sum + 1 + length);
+
+    rowMapOffset(rowMap, forRow, 1);
+    rowMapOffset(rowMap,afterContentRow,1);
+
     return true;
 }
 
-void for_to_while_all(string &s)
+void for_to_while_all(string &s, RowMap &originRowMap)
 {
+//    int rowCount = getRowCount(s);
     string oldtext, newtext;
+
     while (1)
     {
-        if (!for_to_while(s, oldtext, newtext))
+        RowMap tmpRowMap;
+        if (!for_to_while(s, oldtext, newtext, tmpRowMap))
             break;
         string_replace(s, oldtext, newtext);
+        rowMapMultiple(originRowMap,tmpRowMap);
     }
 }
 
-bool do_while_to_while(string &s)//true代表搜索到，false代表没搜索到
+bool do_while_to_while(string &s, RowMap& rowMap)//true代表搜索到，false代表没搜索到
 {
-    regex pattern("[^W_0-9]do([^W_0-9].*[^W_0-9])while[^W_0-9].*\\((.*)\\)");
+    int rowCount = getRowCount(s);
+    initRowMap(rowMap,rowCount);
+    regex pattern("[^W_0-9]do([^W_0-9].*[^W_0-9])while[^W_0-9].*\\((.*)\\)( |\\n)*;");
     smatch result;
 
     int position;
@@ -98,18 +184,22 @@ bool do_while_to_while(string &s)//true代表搜索到，false代表没搜索到
 
     //cout << text << endl;
     //cout << sum;
-
-    s = s.insert(position+length,res1);
-    s = s.replace(position+1,2,"");
+    string newText = "while(1){" + res1 + "\nif(!(" + res2 + "))break;}";
+    int afterRow = extractRowNum(s,position + result.length()) + 1;//这里+1表示下一行开始行号变化
+    rowMapOffset(rowMap,afterRow,1);
+//    s = s.insert(position+length,res1);
+    s = s.replace(position,result.length(),newText);
     return true;
 }
 
-void do_while_to_while_all(string &s){
+void do_while_to_while_all(string &s, RowMap& originRowMap){
     string oldtext, newtext;
     while (1)
     {
-        if (!do_while_to_while(s))
+        RowMap tmpRowMap;
+        if (!do_while_to_while(s, tmpRowMap))
             break;
+        rowMapMultiple(originRowMap,tmpRowMap);
 //        string_replace(s, oldtext, newtext);
     }
 }
@@ -316,6 +406,27 @@ void trans_assign_all(string &s)
     }
 }
 
+void trans_NULL(string &s)
+{
+    smatch result;
+    string target = "NULL";
+    string text,text1;
+    regex pattern1("[^a-zA-Z_0-9]" + target + "[^a-zA-Z_0-9]");
+    while (1)
+    {
+        if (regex_search(s, result, pattern1))
+        {
+            text = result[0];
+            text1 = text;
+            text1 = text1.replace(text1.find(target), target.length(), "0");
+            s = s.replace(s.find(text), text.length(), text1);
+        }
+        else
+            break;
+    }
+}
+
+
 bool trans_define(string &s)
 {
     regex pattern("#define[ \t]+([a-zA-Z_0-9]*)?[ \t]+(.*)?\n");
@@ -443,8 +554,8 @@ void trans_some_function(string &s)
 //    }
 //    else{
 
-        s = "\nvoid abort(){}\n" + s;
-        s = newerr + s;
+    s = "\nvoid abort(){}\n" + s;
+    s = newerr + s;
 //    }
     //string_replace(s, ass, newass);
     //string_replace(s, ass1, newass);
@@ -728,10 +839,11 @@ void trans_dynamic_init(string &s)
             string old_res = res;
             if(extract_dynamic_init(res, st)) {
                 s.replace(s.find(old_res), old_res.size(), res);
-                if (!judge_next_dec(text, 0)) {
+//                if (!judge_next_dec(text, 0)) {
+                if(1){
                     while (!st.empty()) {
                         string top = st.top();
-                        top = "\n" + top + ";";
+                        top = top + ";";
                         st.pop();
                         oldtext = text;
                         text.insert(0, top);
@@ -746,8 +858,10 @@ void trans_dynamic_init(string &s)
     }
 }
 
-
-void trans_advancedef(string &s){
+void trans_advancedef(string &s, RowMap& originRowMap){
+    RowMap rowMap;
+    int rowCount = getRowCount(s);
+    initRowMap(rowMap,rowCount);
     struct item{
         string content;
         long pos;
@@ -787,7 +901,7 @@ void trans_advancedef(string &s){
 
         insert_content = result[1];
         insert_content += result[2];
-        insert_content = "\n" + insert_content + "\n";
+        insert_content = insert_content ;
 
         text = result.suffix();
 
@@ -813,13 +927,22 @@ void trans_advancedef(string &s){
             }
             if (insert_pos != 0) {
 
-                items.emplace_back(insert_content, offset + pos , false);
+                items.emplace_back(insert_content, offset + pos + 1 , false);
                 items.emplace_back(insert_content, insert_pos, true);
 
             }
         }
         offset += pos + result.length();
     }
+
+    ///必须放在sort之前不然顺序乱了
+    for(int i=0;i<items.size();i+=2){
+        int originRow = extractRowNum(s,items[i].pos);
+        int afterRow = extractRowNum(s,items[i+1].pos);
+        auto iter = rowMap.find(originRow);
+        iter->second = afterRow;
+    }
+    rowMapMultiple(originRowMap,rowMap);
 
     sort(items.begin(),items.end());
 
@@ -848,10 +971,13 @@ void trans_annotation(string &s){
     }
 }
 
-void trans_atomic(string &s)
+void trans_atomic(string &s, RowMap &originRowMap)
 {
+    RowMap rowMap;
+    int rowCount = getRowCount(s);
+    initRowMap(rowMap,rowCount);
     map<int,string> insert_map;
-    string str_pat = "void __VERIFIER_atomic(.*)\\(.*\\)(.|\\n)*?\\{";
+    string str_pat = "void __VERIFIER_atomic(.*)\\(.*\\)( |\\n)*?\\{";
     regex pattern(str_pat);
     smatch result;
 
@@ -864,11 +990,23 @@ void trans_atomic(string &s)
         pos = result.position();
 //        cout<<"result = "<<result[2]<<endl;
 
+//        bool pureDecFlag = false;//判断是否只是单纯的声明
+//        int tmp_count = offset + pos + res.length();
+//        while(tmp_count > 0){
+//            if(s[tmp_count] == '{')
+//                break;
+//            if(s[tmp_count] == ';'){
+//                pureDecFlag = true;
+//                break;
+//            }
+//            tmp_count--;
+//        }
         res = result[0];
         mutex_name = result[1];
 
         int end_point = offset+pos+res.length();
         int count = 0;
+
         while(count>=0){
             if(s[end_point] == '{')
                 count++;
@@ -882,23 +1020,41 @@ void trans_atomic(string &s)
         text = result.suffix();
         if(isdigit(mutex_name[0]))
             throw "ERROR!atomic function's name should be checked!";
-        insert_map.emplace(offset+pos+res.length(),mutex_name);
-        insert_map.emplace(end_point-1,mutex_name);
+//        if(!pureDecFlag) {
+        insert_map.emplace(offset + pos + res.length(), mutex_name);
+        insert_map.emplace(end_point - 1, mutex_name);
+//        }
         offset += pos + result.length();
     }
 
     if(insert_map.size() != 0) {
+        //rowMap必须先计算，否则s将会变化
+        auto iter = insert_map.begin();
+        while(iter != insert_map.end()){
+            int contentRow = extractRowNum(s,iter->first) + 1;//这里+1和之后pthread_mutex_lock之前的\n对应
+            rowMapOffset(rowMap,contentRow,1);
+            iter++;
+            int afterRow = extractRowNum(s,iter->first);
+            rowMapOffset(rowMap,afterRow,1);
+            iter++;
+        }
+        rowMapOffset(rowMap,1,1);
+        rowMapMultiple(originRowMap,rowMap);
+
         string atomic_lock = "atomic_lock";
         auto riter = insert_map.rbegin();
         while (riter != insert_map.rend()) {
-            s.insert(riter->first, "\npthread_mutex_unlock(&" + atomic_lock + ");\n");
+            s.insert(riter->first, "pthread_mutex_unlock(&" + atomic_lock + ");\n");
             riter++;
-            s.insert(riter->first, "\npthread_mutex_lock(&" + atomic_lock + ");\n");
+            s.insert(riter->first, "\npthread_mutex_lock(&" + atomic_lock + ");");
             riter++;
         }
 
         s = "pthread_mutex_t " + atomic_lock + " = PTHREAD_MUTEX_INITIALIZER;\n" + s;
+
+
     }
+
 //    cout<<s<<endl;
 }
 
@@ -923,22 +1079,211 @@ void Add_NULL(string &s){
 
 }
 
-void pre_process(string &s)
-{
-    Add_NULL(s);
-    trans_annotation(s);
-    trans_Bool2int(s);
-    trans_define_all(s);
-    for_to_while_all(s);
-    do_while_to_while_all(s);
-//    trans_plusplus_all(s);
-//    trans_subsub_all(s);
+void trans_addAbort(string &s, RowMap &rowMap){
+    s = "void abort(){}\n" + s;
+    s = "void reach_error(){}\n" + s;
+    rowMapOffset(rowMap,1,2);
+}
 
-    trans_atomic(s);//atomic function add lock, place before trans_some_function
-    trans_some_function(s);
-    trans_assign_all(s);
-    trans_switch_all(s);
-    trans_dynamic_init(s);
-    trans_advancedef(s);
-    //cout << s << endl;
+//void pre_process(string &s)
+//{
+////    Add_NULL(s);
+//    trans_NULL(s);
+////    trans_annotation(s); annotation is replaced by gcc
+//    trans_Bool2int(s);
+//    trans_assign_all(s);
+////    trans_define_all(s); define is replaced by gcc
+//
+//
+//    RowMap rowMap;
+///// row change
+//    for_to_while_all(s, rowMap);
+//    do_while_to_while_all(s, rowMap);
+////    trans_plusplus_all(s);
+////    trans_subsub_all(s);
+//
+//    trans_atomic(s,rowMap);//atomic function add lock, place before trans_some_function
+////    trans_some_function(s);
+//
+//    trans_switch_all(s);
+//    trans_dynamic_init(s);
+//    trans_advancedef(s, rowMap);
+//
+//    trans_addAbort(s, rowMap);
+//    //cout << s << endl;
+//}
+
+void gccpreprocess(string filename){
+    string cmd;
+    string newfilename = filename;
+    cmd = "gcc -B .. -E " + filename + " -o " + newfilename.replace(newfilename.find(".c"),2,".i");
+    system(cmd.c_str());
+}
+
+map<int,int> getRowMap(string filename){
+    gccpreprocess(filename);
+    string preprocessFile = filename;
+    preprocessFile = preprocessFile.replace(preprocessFile.rfind(".c"),2,".i");
+    map<int,int> rowMap,rowMap1,rowMap2;
+    ifstream fin;
+    fin.open(preprocessFile);
+    if(!fin.is_open()){
+        throw preprocessFile + " not exist!";
+    }
+
+    int rowCount = 1;//这里rowCount用于记录行号，从1开始
+    string row;
+    while(getline(fin,row)) {
+        if(row[0] == '#'){
+            auto tmp_vec = split(row," ");
+            if(rowCount>1 && tmp_vec.size()>2 && tmp_vec[2] == "\"" + filename + "\""){
+                string tmp_row = tmp_vec[1];
+                rowMap1.emplace(atoi(tmp_row.c_str()),rowCount + 1);
+            }
+        }
+//        cout << row << endl;
+        rowCount++;
+    }
+    fin.close();
+    auto iter1 = rowMap1.begin();
+    auto iter2 = rowMap1.begin();
+    iter2++;
+    while(iter2 != rowMap1.end()){
+        for(int i=iter1->first;i<iter2->first;i++){
+            rowMap.emplace(i,iter1->second + i - iter1->first);
+        }
+        iter1++,iter2++;
+    }
+    int originRowCount = 0;
+    fin.open(filename);
+    while(getline(fin,row))
+        originRowCount++;
+    fin.close();
+    int remain = iter1->first;
+    while(remain<originRowCount){
+        rowMap.emplace(remain,iter1->second + remain-iter1->first);
+        remain++;
+    }
+
+    return rowMap;
+}
+
+void clearLineMarker(string filename) {
+    ifstream fin;
+    fin.open(filename);
+    if (!fin.is_open()) {
+        throw filename + " not exist!";
+    }
+    vector<string> lines;
+    string row;
+    while (getline(fin, row)) {
+        if (row[0] == '#')
+            lines.push_back("");
+        else
+            lines.push_back(row);
+    }
+    fin.close();
+
+    string preprocessFile = filename;
+    preprocessFile = preprocessFile.replace(preprocessFile.rfind(".i"), 2, ".ii");
+    ofstream fout;
+    fout.open(preprocessFile, ios::out);
+    if (!fout.is_open()) {
+        throw preprocessFile + " not exist!";
+    }
+    for (int i = 0; i < lines.size(); i++) {
+        fout << lines[i] << "\n";
+    }
+    fout.close();
+}
+
+int getFileRowCount(string filename){
+    ifstream fin(filename);
+    int rowCount = 0;
+    string row;
+    while(getline(fin,row)){
+        rowCount++;
+    }
+    return rowCount;
+}
+
+void trans_deleteAtomicBeginEnd(string &s){
+    string atomic_begin = "extern void __VERIFIER_atomic_begin();";
+    string atomic_end = "extern void __VERIFIER_atomic_end();";
+
+    string_replace(s,  atomic_begin, "");
+    string_replace(s,  atomic_end, "");
+
+    string atomic_begin_call = "__VERIFIER_atomic_begin();";
+    string atomic_end_call = "__VERIFIER_atomic_end();";
+
+    string_replace(s,  atomic_begin_call, "");
+    string_replace(s,  atomic_end_call, "");
+
+    string_replace(s, "ERROR:", "");
+}
+
+RowMap getRowMap1(string filename) {
+    RowMap rowMap;
+
+
+    string iiFile = filename, iiiFile = filename;
+    iiFile = iiFile.replace(iiFile.rfind(".c"), 2, ".ii");
+    iiiFile = iiiFile.replace(iiiFile.rfind(".c"), 2, ".iii");
+
+    int rowCount = getFileRowCount(iiFile);
+    initRowMap(rowMap,rowCount);
+
+    ifstream fin;
+    fin.open(iiFile, ios::in);
+    if (!fin.is_open()) {
+        cout << iiFile << " not exist" << endl;
+        exit(-1);
+    }
+    string temp_s;
+    istreambuf_iterator<char> beg(fin), end;
+    temp_s = string(beg, end);
+    fin.close();
+
+    trans_NULL(temp_s);
+    trans_Bool2int(temp_s);
+    trans_assign_all(temp_s);
+
+/// row change
+
+    for_to_while_all(temp_s, rowMap);
+    do_while_to_while_all(temp_s, rowMap);
+    trans_atomic(temp_s,rowMap);
+    trans_dynamic_init(temp_s);
+    trans_advancedef(temp_s,rowMap);
+    trans_addAbort(temp_s, rowMap);
+    trans_deleteAtomicBeginEnd(temp_s);
+
+
+    ofstream fout;
+    fout.open(iiiFile, ios::out);
+    fout << temp_s;
+    fout.close();
+
+    return rowMap;
+}
+
+void clearAdditionFiles(string filename){
+    string cmd;
+    string filePrefix = filename.replace(filename.find(".c"),2,"");
+    cmd = "rm " + filename + ".i " + "&" + "rm " + filename + ".ii";
+    system(cmd.c_str());
+}
+
+RowMap preProcessGetRowMap(string filename){
+
+    string iFile = filename;
+    iFile = iFile.replace(iFile.rfind(".c"),2,".i");
+
+    auto rowMap = getRowMap(filename);
+    clearLineMarker(iFile);
+    auto rowMap1 = getRowMap1(filename);
+    rowMapMultiple(rowMap,rowMap1);
+    clearAdditionFiles(filename);
+    return rowMap;
 }

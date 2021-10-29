@@ -13,6 +13,7 @@
 
 #include"AST.h"
 #include"y.tab.h"
+#include"base.h"
 
 set<string> build_in_type {"void","char","short","int","long","float","double"};
 extern string return_suffix;
@@ -59,6 +60,50 @@ void travel_tree(gtree *tree,ofstream &out,vector<pair<string,int>> &list)
 
 
     //out.close();
+}
+
+void generate_rowTree(gtree *tree,ofstream &out,vector<pair<string,int>> &list)
+{
+
+    if (tree == NULL)
+        return;
+    string parent_place, child_place;
+    int parent_no, child_no;
+    if (tree->parent != NULL)
+    {
+
+        parent_place = tree->parent->place;
+        if(parent_place[0] == '"')
+            parent_place = parent_place.substr(1,parent_place.size()-2);
+        parent_no = tree->parent->num;
+        child_place = tree->place;
+        if(child_place[0] == '"')
+            child_place = child_place.substr(1,child_place.size()-2);
+        child_no = tree->num;
+
+        out << "node" << to_string(parent_no) << "[label=\"" << parent_place << "\nrow:"<<tree->parent->row << "\"]" << endl;
+        out << "node" << to_string(child_no) << "[label=\"" << child_place << "\nrow:"<<tree->row << "\"]" << endl;
+        out << "node" << to_string(parent_no) << "->" << "node" << to_string(child_no) << ";" << endl;
+
+    }
+    generate_rowTree(tree->child, out, list);
+    generate_rowTree(tree->next, out, list);
+
+
+    //out.close();
+}
+
+void toFileRowTree(gtree *head){
+    ofstream out;
+    vector<pair<string,int>> list;
+    out.open("rowTree.dot", ios::out);
+
+    out << "digraph G{" << endl;
+    generate_rowTree(head, out, list);
+    out << "}" << endl;
+    out.close();
+
+    makeGraph("rowTree.dot", "rowTree.png");
 }
 
 //output gtree into 'tree.dot'
@@ -430,43 +475,43 @@ void reset_gen_ast()
  * Input:filename,flag(true if needs preprocess)
  * Output:AST
  * */
-gtree *&create_tree(string filename, bool pre_process_flag)
+gtree *&create_tree(string filename)
 {
     reset_gen_ast();
-    if (pre_process_flag == true)
-    {
-        //string filename = "a.txt";
-        string filename1 = filename;
-        string whole_filename1 = filename1.substr(0,filename1.rfind('.')) + ".iii";
-        ifstream fin;
-        ofstream fout;
-        fin.open(filename, ios::in);
-        if (!fin.is_open())
-        {
-            cout << filename << " not exist" << endl;
-            exit(-1);
-        }
-        string temp_s;
-        istreambuf_iterator<char> beg(fin), end;
-        temp_s = string(beg, end);
-        fin.close();
-        pre_process(temp_s);
-        fout.open(whole_filename1, ios::out);
-
-        fout << temp_s;
-        fout.close();
-
-        FILE *fp = fopen(whole_filename1.c_str(), "r");
-        if (fp)
-            yyin = fp;
-        else
-        {
-            cout << whole_filename1 << " not exist" << endl;
-            exit(-1);
-        }
-
-    }
-    else
+//    if (pre_process_flag == true)
+//    {
+//        //string filename = "a.txt";
+//        string filename1 = filename;
+//        string whole_filename1 = filename1.substr(0,filename1.rfind('.')) + ".iii";
+//        ifstream fin;
+//        ofstream fout;
+//        fin.open(filename, ios::in);
+//        if (!fin.is_open())
+//        {
+//            cout << filename << " not exist" << endl;
+//            exit(-1);
+//        }
+//        string temp_s;
+//        istreambuf_iterator<char> beg(fin), end;
+//        temp_s = string(beg, end);
+//        fin.close();
+//        pre_process(temp_s);
+//        fout.open(whole_filename1, ios::out);
+//
+//        fout << temp_s;
+//        fout.close();
+//
+//        FILE *fp = fopen(whole_filename1.c_str(), "r");
+//        if (fp)
+//            yyin = fp;
+//        else
+//        {
+//            cout << whole_filename1 << " not exist" << endl;
+//            exit(-1);
+//        }
+//
+//    }
+//    else
     {
         FILE *fp = fopen(filename.c_str(), "r");
 

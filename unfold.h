@@ -129,7 +129,7 @@ public:
 
     void unfolding();
 
-    void find_new_pe_by_t(int t_idx,CUT* cut_cur);
+    void find_new_pe_by_t(int t_idx,CUT* cut_cur,bool is_mino);//is_init是否是由min_o为cut查找可能扩展
 
     UNFOLD();
 

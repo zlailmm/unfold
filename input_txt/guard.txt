@@ -1,0 +1,14 @@
+3
+P0 String 1
+1`'a'
+P1 String 1
+2`'a'
+P2 String 1
+1`'a'
+1
+T0 1`0
+4
+P0 T0 true 1`tid
+P1 T0 true 1`tid
+T0 P1 true 1`tid
+T0 P2 true 1`tid

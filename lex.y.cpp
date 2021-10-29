@@ -2172,20 +2172,22 @@ int comment1()
     return 1;
 }
 
-int column = 0;
-
+//int column = 0;
+int row = 1;//行号从1开始
 void count()
 {
-    int i;
-
-    for (i = 0; yytext[i] != '\0'; i++)
-        if (yytext[i] == '\n')
-            column = 0;
-        else if (yytext[i] == '\t')
-            column += 8 - (column % 8);
-        else
-            column++;
-
+    if(strcmp(yytext,"\n") == 0)
+        row++;
+//    int i;
+//
+//    for (i = 0; yytext[i] != '\0'; i++)
+//        if (yytext[i] == '\n')
+//            column = 0;
+//        else if (yytext[i] == '\t')
+//            column += 8 - (column % 8);
+//        else
+//            column++;
+//    cout<< "yytext:"<<yytext<< endl;
     //ECHO;
 }
 
@@ -2227,6 +2229,7 @@ gtree* newNode(std::string node_name, int type)
     p->next = NULL;
     p->parent = NULL;
     p->type = type;
+    p->row = row;
     if (node_name == "{")
         now_level++;
     else if (node_name == "}")

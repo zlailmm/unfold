@@ -1,0 +1,8 @@
+subgraph cluster_P0{fontsize = 30;label="_";color="white"P0[shape=circle,fontsize = 30,width=1,style="filled",color="black",fillcolor="lightblue"]}
+subgraph cluster_P1{fontsize = 30;label="__";color="white"P1[shape=circle,fontsize = 30,width=1,style="filled",color="black",fillcolor="lightblue"]}
+subgraph cluster_P2{fontsize = 30;label="___";color="white"P2[shape=circle,fontsize = 30,width=1,style="filled",color="black",fillcolor="lightblue"]}
+T0[shape=box,fontsize = 30,width=1,height=1]
+P0->T0[label="1`tid"]
+P1->T0[label="1`tid"]
+T0->P1[label="1`tid"]
+T0->P2[label="1`tid"]

@@ -42,6 +42,7 @@ public:
     string matched_P;//for sentence node
     string enter_P;//
     bool is_processed;
+    int row;
 
     gtree()
     {
@@ -64,7 +65,7 @@ public:
     //void gen(string a);
 };
 
-gtree *&create_tree(string filename, bool flag);
+gtree *&create_tree(string filename);
 
 string get_gen_P();
 
@@ -78,7 +79,7 @@ bool judge_goto(gtree *statement1);
 bool judge_break(gtree *statement1);
 bool judge_expression_statement(gtree *statement1);
 bool judge_label_statement(gtree *statement1);
-void pre_process(string &s);
+//void pre_process(string &s);
 bool judge_statement(gtree *p);
 bool judge_compound_statement(gtree *statement1);
 bool judge_jump_statement(gtree *statement1);
@@ -87,3 +88,4 @@ void cut_tree(gtree *p);
 extern string call_statement_suffix;
 void intofile_tree(gtree *tree);
 void free_tree(gtree *p);
+void toFileRowTree(gtree *head);

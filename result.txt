@@ -122,3 +122,7 @@ formula:1
 current file: ./pthread/bigshot_p.i
 formula:1
 
+
+current file: ./test_programs/fib_bench-1.i
+formula:1
+

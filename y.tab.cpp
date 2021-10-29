@@ -4458,6 +4458,7 @@ void insert(gtree *parent, gtree *child)
         //child->IsBegin=1;
         parent->No_Child = 1;
         child->parent = parent;
+        parent->row = child->row;
     }
     else
     {
